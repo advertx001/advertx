@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AdvertX.in — Digital Marketing Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#07070E;--bg2:#0D0D1A;--bg3:#111124;
+  --glass:rgba(255,255,255,.05);--glass2:rgba(255,255,255,.08);
+  --bdr:rgba(255,255,255,.09);--bdr2:rgba(255,255,255,.15);
+  --tx:#FFFFFF;--tx2:rgba(255,255,255,.65);--tx3:rgba(255,255,255,.35);
+  --pu:#7C3AED;--pu2:#9D5FF3;--pu3:#C4A0FF;--pk:#E040A0;
+  --gr:linear-gradient(135deg,#7C3AED,#E040A0);
+  --gr2:linear-gradient(135deg,#9D5FF3,#C084FC);
+  --glow:rgba(124,58,237,.3);
+  --nav:62px;
+  --ff:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{font-family:var(--ff);color:var(--tx);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+*{box-sizing:border-box}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--ff);border:none;outline:none;cursor:pointer}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-thumb{background:var(--pu);border-radius:2px}
+
+/* ─── TOKENS ─────────────────────────── */
+.grad{background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.con{max-width:1140px;margin:0 auto;padding:0 2.5rem}
+.pill{display:inline-flex;align-items:center;gap:.4rem;border:1px solid rgba(124,58,237,.32);background:rgba(124,58,237,.09);border-radius:100px;padding:.3rem .9rem;font-size:.67rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--pu3)}
+.pill .pd{width:5px;height:5px;border-radius:50%;background:var(--pu2);flex-shrink:0}
+.sec-label{display:flex;flex-direction:column;gap:.7rem;margin-bottom:3rem}
+.sec-label.center{align-items:center;text-align:center}
+.h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:800;letter-spacing:-.035em;line-height:1.18;color:#fff}
+.sub{font-size:.92rem;color:var(--tx2);line-height:1.8;max-width:520px}
+.sec-label.center .sub{margin:0 auto}
+
+/* scroll reveal */
+.sr{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.sr.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* grid bg */
+.bg-grid{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:40px 40px;
+  mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 0%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 0%,transparent 100%);
+}
+
+.sec{padding:7rem 0}.sec-alt{background:var(--bg2)}
+/* ─── BUTTONS ────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.9rem;border-radius:10px;font-size:.88rem;font-weight:700;transition:all .2s;cursor:pointer;border:none;font-family:var(--ff)}
+.btn-primary{background:var(--gr);color:#fff;box-shadow:0 6px 22px var(--glow)}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-ghost{background:var(--glass);border:1px solid var(--bdr2);color:var(--tx2);backdrop-filter:blur(10px)}
+.btn-ghost:hover{border-color:var(--pu2);color:#fff}
+
+/* ─── NAV ─────────────────────────────── */
+nav{position:fixed;inset:0 0 auto;z-index:900;height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(7,7,14,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--bdr)}
+.nlogo{display:flex;align-items:center;gap:.5rem;font-size:1.1rem;font-weight:800;letter-spacing:-.02em;cursor:pointer;color:#fff}
+.nli{width:28px;height:28px;border-radius:7px;background:var(--gr);display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:900;color:#fff;flex-shrink:0}
+.nlinks{display:flex;gap:2rem;list-style:none}
+.nlinks a{font-size:.8rem;font-weight:500;color:var(--tx2);transition:color .2s;cursor:pointer}
+.nlinks a:hover,.nlinks a.active{color:#fff}
+.nr{display:flex;gap:.6rem;align-items:center}
+.nbtn-ghost{padding:.42rem 1rem;border-radius:8px;border:1px solid var(--bdr2);font-size:.76rem;font-weight:500;color:var(--tx2);background:transparent;transition:all .2s}
+.nbtn-ghost:hover{border-color:var(--pu2);color:#fff}
+.nbtn-fill{padding:.42rem 1.15rem;border-radius:8px;background:var(--gr);font-size:.76rem;font-weight:600;color:#fff;box-shadow:0 3px 12px var(--glow)}
+
+/* ─── PAGE SYSTEM ──────────────────────── */
+.page{display:none;min-height:100vh;padding-top:var(--nav)}
+.page.active{display:block}
+
+/* ─── ORBS ──────────────────────────────── */
+.orb{position:absolute;border-radius:50%;filter:blur(110px);pointer-events:none}
+.o1{width:600px;height:480px;background:rgba(124,58,237,.22);top:-80px;left:-120px}
+.o2{width:500px;height:400px;background:rgba(224,64,160,.14);top:-40px;right:-100px}
+.o3{width:380px;height:300px;background:rgba(124,58,237,.1);bottom:60px;left:50%;transform:translateX(-50%)}
+
+/* ═══════════════════════════════════════
+   HOME — HERO
+═══════════════════════════════════════ */
+.hero{position:relative;min-height:calc(100vh - var(--nav));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 1.5rem 3rem;overflow:hidden}
+.hero-z{position:relative;z-index:1;width:100%;max-width:860px;margin:0 auto}
+.hbadge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.28);border-radius:100px;padding:.3rem 1rem .3rem .4rem;font-size:.73rem;font-weight:600;color:var(--pu3);margin-bottom:1.8rem;animation:fadeUp .6s .1s both}
+.hbadge-dot{width:20px;height:20px;border-radius:50%;background:var(--gr);display:flex;align-items:center;justify-content:center;font-size:.6rem}
+.hh1{font-size:clamp(2.6rem,6.5vw,5rem);font-weight:800;letter-spacing:-.04em;line-height:1.07;margin-bottom:1.25rem;animation:fadeUp .7s .2s both;color:#fff}
+.hsub{font-size:.97rem;color:var(--tx2);line-height:1.76;max-width:480px;margin:0 auto 2rem;animation:fadeUp .7s .32s both}
+.hbtns{display:flex;gap:.8rem;justify-content:center;margin-bottom:2.2rem;animation:fadeUp .7s .42s both;flex-wrap:wrap}
+.htrust{display:flex;align-items:center;justify-content:center;gap:.85rem;animation:fadeUp .7s .52s both;margin-bottom:3.5rem}
+.avts{display:flex}
+.av{width:30px;height:30px;border-radius:50%;border:2px solid var(--bg);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-left:-7px;color:#fff}
+.av:first-child{margin-left:0}
+.htxt{font-size:.74rem;color:var(--tx3)}
+.hstars{color:#FBBF24;font-size:.76rem;letter-spacing:1.5px;display:block}
+
+/* dashboard mockup */
+.hmock{position:relative;width:100%;max-width:940px;margin:0 auto;animation:fadeUp .9s .62s both;z-index:1}
+.mframe{background:rgba(10,10,20,.96);border:1px solid var(--bdr2);border-radius:16px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.5),0 0 60px rgba(124,58,237,.08)}
+.mbar{display:flex;align-items:center;gap:.4rem;padding:.75rem 1.2rem;border-bottom:1px solid var(--bdr);background:rgba(255,255,255,.02)}
+.md{width:9px;height:9px;border-radius:50%}
+.md.r{background:#FF5F57}.md.y{background:#FEBC2E}.md.g{background:#28C840}
+.murl{flex:1;margin:0 .7rem;padding:.24rem .6rem;background:rgba(255,255,255,.04);border-radius:5px;font-size:.64rem;color:var(--tx3);text-align:center}
+.mbody{display:grid;grid-template-columns:175px 1fr}
+.mside{border-right:1px solid var(--bdr);padding:1rem .7rem;display:flex;flex-direction:column;gap:.28rem}
+.mnav{display:flex;align-items:center;gap:.5rem;padding:.48rem .65rem;border-radius:7px;font-size:.7rem;color:var(--tx3)}
+.mnav.act{background:rgba(124,58,237,.14);color:var(--pu3);border:1px solid rgba(124,58,237,.2)}
+.mmain{padding:1.1rem;display:flex;flex-direction:column;gap:.8rem}
+.sr4{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.sc{background:var(--glass);border:1px solid var(--bdr);border-radius:9px;padding:.75rem .85rem}
+.sv{font-size:1.22rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.1rem}
+.sv.p{background:var(--gr2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sv.g{color:#34D399}.sv.y{color:#FBBF24}
+.sl{font-size:.56rem;text-transform:uppercase;letter-spacing:.05em;color:var(--tx3)}
+.sc2{font-size:.58rem;color:#34D399;margin-top:.22rem}
+.cc{background:var(--glass);border:1px solid var(--bdr);border-radius:9px;padding:.9rem}
+.chd{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+.ctt{font-size:.73rem;font-weight:600;color:#fff}
+.cp{font-size:.58rem;padding:.16rem .48rem;border-radius:100px;background:rgba(52,211,153,.1);color:#34D399;border:1px solid rgba(52,211,153,.2)}
+.cmc{background:var(--glass);border:1px solid var(--bdr);border-radius:9px;padding:.9rem}
+.cmt{font-size:.7rem;font-weight:600;margin-bottom:.6rem;color:var(--tx2)}
+.cmr{display:flex;align-items:center;justify-content:space-between;padding:.38rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.cmr:last-child{border:none}
+.cn{font-size:.66rem;font-weight:500;color:#fff}.cpl{font-size:.56rem;color:var(--tx3)}
+.cr{font-size:.66rem;font-weight:600;color:#34D399}
+.tl{font-size:.56rem;padding:.12rem .4rem;border-radius:100px}
+.tl.lv{background:rgba(52,211,153,.1);color:#34D399;border:1px solid rgba(52,211,153,.18)}
+.tl.op{background:rgba(251,191,36,.1);color:#FBBF24;border:1px solid rgba(251,191,36,.18)}
+.fch{position:absolute;background:rgba(10,10,20,.92);border:1px solid var(--bdr2);border-radius:12px;padding:.65rem .88rem;backdrop-filter:blur(16px);box-shadow:0 12px 32px rgba(0,0,0,.4);animation:chipF 4s ease-in-out infinite}
+.fc1{bottom:-14px;left:-48px;animation-delay:0s}
+.fc2{top:44px;right:-44px;animation-delay:1.8s}
+.fc3{bottom:72px;right:-38px;animation-delay:1s}
+@keyframes chipF{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.chl{font-size:.55rem;text-transform:uppercase;letter-spacing:.06em;color:var(--tx3);margin-bottom:.18rem}
+.chv{font-size:.94rem;font-weight:700;letter-spacing:-.02em}
+.chv.g{color:#34D399}.chv.p{color:var(--pu3)}.chv.y{color:#FBBF24}
+.chs{font-size:.56rem;color:var(--tx3);margin-top:.06rem}
+
+/* ─── TICKER ─────────────────────────── */
+.ticker{border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);background:rgba(255,255,255,.01);overflow:hidden;padding:1.5rem 0}
+.tkl{text-align:center;font-size:.64rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);margin-bottom:1.2rem}
+.tkt{display:flex;gap:3.5rem;width:max-content;animation:tkA 22s linear infinite;align-items:center}
+.tkn{font-size:.95rem;font-weight:700;color:rgba(255,255,255,.25);white-space:nowrap}
+.tkn:hover{color:rgba(255,255,255,.5)}
+@keyframes tkA{to{transform:translateX(-50%)}}
+
+/* ─── 4-COL SCROLL FEATURES ─────────── */
+.feat-sec{padding:6rem 0;overflow:hidden;background:var(--bg)}
+.fcols{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem;max-height:660px;overflow:hidden;mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 88%,transparent)}
+.fcol{display:flex;flex-direction:column;gap:.85rem}
+.fcol.dn{animation:cD 16s linear infinite}
+.fcol.up{animation:cU 20s linear infinite}
+.fcol:nth-child(2){animation-duration:19s}.fcol:nth-child(4){animation-duration:23s}
+@keyframes cD{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+@keyframes cU{0%{transform:translateY(-50%)}100%{transform:translateY(0)}}
+.fcard{background:var(--glass);border:1px solid var(--bdr);border-radius:14px;padding:1.3rem;flex-shrink:0}
+.fcard:hover{border-color:rgba(124,58,237,.35);background:rgba(124,58,237,.06)}
+.fico{width:38px;height:38px;border-radius:9px;background:rgba(124,58,237,.14);border:1px solid rgba(124,58,237,.22);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:.8rem}
+.ftit{font-size:.84rem;font-weight:700;margin-bottom:.32rem;color:#fff}
+.fdesc{font-size:.7rem;color:var(--tx2);line-height:1.6}
+.ftags{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.65rem}
+.ft{font-size:.56rem;padding:.16rem .45rem;border-radius:100px;background:rgba(255,255,255,.05);border:1px solid var(--bdr);color:var(--tx2)}
+
+/* ═══════════════════════════════════════
+   SERVICES STICKY SCROLL — Section 4
+═══════════════════════════════════════ */
+.svsec{padding:6rem 0;background:var(--bg2)}
+.svs-wrap{display:grid;grid-template-columns:300px 1fr;gap:4rem;align-items:start}
+.svs-left{position:sticky;top:calc(var(--nav) + 1.5rem)}
+.svs-left-inner{background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.18);border-radius:20px;padding:2rem;backdrop-filter:blur(18px)}
+.svs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:1.3rem}
+.svs-stat{background:rgba(255,255,255,.05);border:1px solid var(--bdr);border-radius:11px;padding:.85rem .5rem;text-align:center}
+.svs-val{font-size:1.4rem;font-weight:800;letter-spacing:-.03em;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.svs-lab{font-size:.58rem;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-top:.2rem;font-weight:500}
+
+/* folder sets */
+.svs-right{display:flex;flex-direction:column;gap:1.8rem}
+.fset{width:100%}
+.fset-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
+.fol-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:1.5rem 1.3rem;cursor:pointer;position:relative;overflow:hidden;backdrop-filter:blur(16px);transition:transform .25s cubic-bezier(.34,1.56,.64,1),border-color .25s,background .25s,box-shadow .25s;user-select:none}
+.fol-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,58,237,.1),rgba(224,64,160,.05));opacity:0;transition:opacity .3s;pointer-events:none}
+.fol-card:hover{transform:translateY(-4px) scale(1.015);border-color:rgba(124,58,237,.45);background:rgba(124,58,237,.09);box-shadow:0 16px 40px rgba(124,58,237,.18)}
+.fol-card:hover::before{opacity:1}
+.fol-card.active{border-color:rgba(124,58,237,.55);background:rgba(124,58,237,.12);box-shadow:0 8px 28px rgba(124,58,237,.22)}
+.fol-ico-wrap{width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,rgba(124,58,237,.22),rgba(224,64,160,.12));border:1px solid rgba(124,58,237,.28);display:flex;align-items:center;justify-content:center;margin-bottom:.85rem;box-shadow:0 4px 12px rgba(124,58,237,.18)}
+.fol-ico-wrap svg{width:22px;height:22px;color:var(--pu3)}
+.fol-name{font-size:.86rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:.3rem}
+.fol-tag{font-size:.58rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--pu3);background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.2);border-radius:100px;padding:.17rem .52rem;display:inline-block}
+.fol-card .fol-face::after{content:'↗';position:absolute;top:1rem;right:1rem;font-size:.78rem;color:rgba(255,255,255,.18);transition:color .2s,transform .2s}
+.fol-card:hover .fol-face::after{color:var(--pu3);transform:translate(2px,-2px)}
+.fol-card.active .fol-face::after{content:'↙';color:var(--pu3)}
+/* drawer */
+.fol-drawer{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.23,1,.32,1),opacity .35s,margin .4s;opacity:0;margin-top:0}
+.fol-drawer.open{max-height:500px;opacity:1;margin-top:.9rem}
+.fol-drawer::before{content:'';position:absolute;left:var(--arrow-left,50%);transform:translateX(-50%) translateY(-10px);width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:9px solid rgba(124,58,237,.32);transition:left .3s cubic-bezier(.23,1,.32,1);pointer-events:none;z-index:3}
+.fol-drawer-inner{background:rgba(124,58,237,.07);border:1px solid rgba(124,58,237,.25);border-radius:18px;padding:1.8rem 2rem;backdrop-filter:blur(22px);display:grid;grid-template-columns:1.1fr 1fr;gap:1.8rem;position:relative;overflow:hidden;animation:drawerIn .4s cubic-bezier(.23,1,.32,1) both}
+.fol-drawer-inner::after{content:'';position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(124,58,237,.1);filter:blur(55px);bottom:-70px;right:-55px;pointer-events:none}
+@keyframes drawerIn{from{transform:scaleY(.9) translateY(-10px);opacity:0}to{transform:scaleY(1) translateY(0);opacity:1}}
+.fdl-head{display:flex;flex-direction:column;gap:.6rem;border-right:1px solid rgba(255,255,255,.07);padding-right:1.8rem}
+.fdl-ico{width:48px;height:48px;border-radius:13px;background:var(--gr);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(124,58,237,.3)}
+.fdl-ico svg{width:22px;height:22px;color:#fff}
+.fdl-tit{font-size:1.15rem;font-weight:800;letter-spacing:-.025em;color:#fff;line-height:1.2}
+.fdl-desc{font-size:.8rem;color:var(--tx2);line-height:1.7}
+.fdl-tags{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:.2rem}
+.fdl-tag{font-size:.6rem;padding:.19rem .55rem;border-radius:100px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55)}
+.fdl-list{list-style:none;display:flex;flex-direction:column;gap:.52rem;padding-top:.2rem}
+.fdl-list li{display:flex;align-items:flex-start;gap:.52rem;font-size:.78rem;color:var(--tx2);line-height:1.5}
+.fdl-list li .chk{width:17px;height:17px;border-radius:50%;background:rgba(52,211,153,.14);border:1px solid rgba(52,211,153,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:.58rem;color:#34D399}
+
+/* ─── BENTO ──────────────────────────── */
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem}
+.bc{background:var(--glass);border:1px solid var(--bdr);border-radius:18px;padding:1.8rem;overflow:hidden;position:relative;transition:border-color .3s}
+.bc:hover{border-color:rgba(124,58,237,.28)}
+.bc.wide{grid-column:span 2}
+.bcico{width:42px;height:42px;border-radius:10px;background:var(--gr);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.9rem;box-shadow:0 6px 16px var(--glow)}
+.bcnum{font-size:2.6rem;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:.25rem;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.bctit{font-size:.9rem;font-weight:700;margin-bottom:.38rem;color:#fff}
+.bcdesc{font-size:.74rem;color:var(--tx2);line-height:1.65}
+.bcglow{position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(124,58,237,.09);filter:blur(50px);bottom:-60px;right:-60px;pointer-events:none}
+.mbars{display:flex;align-items:flex-end;gap:3px;height:48px;margin-top:.85rem}
+.mb{flex:1;border-radius:3px 3px 0 0;background:rgba(124,58,237,.16)}
+.mb.a{background:var(--gr2)}
+
+/* ─── TESTIMONIALS ───────────────────── */
+.testi{padding:6rem 0;overflow:hidden;background:var(--bg2)}
+.tehead{text-align:center;margin-bottom:2.5rem}
+.trows{display:flex;flex-direction:column;gap:.85rem;overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
+.trow{display:flex;gap:.85rem;width:max-content}
+.tr1{animation:tL 32s linear infinite}.tr2{animation:tR 38s linear infinite}
+@keyframes tL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes tR{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.tcard{background:var(--glass);border:1px solid var(--bdr);border-radius:14px;padding:1.3rem;width:340px;flex-shrink:0;transition:border-color .3s}
+.tcard:hover{border-color:rgba(124,58,237,.28)}
+.ttop{display:flex;align-items:center;gap:.65rem;margin-bottom:.8rem}
+.tav{width:36px;height:36px;border-radius:50%;background:var(--gr);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;flex-shrink:0}
+.tname{font-size:.82rem;font-weight:600;color:#fff}
+.trole{font-size:.64rem;color:var(--tx3)}
+.tstars{color:#FBBF24;font-size:.66rem;letter-spacing:2px;margin-bottom:.42rem}
+.ttxt{font-size:.73rem;color:var(--tx2);line-height:1.65}
+
+/* ─── CASE STUDIES ───────────────────── */
+.casesec{padding:6rem 0;background:var(--bg)}
+.cwrap{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.8rem;gap:2rem}
+.cases{display:flex;flex-direction:column}
+.case{display:grid;grid-template-columns:56px 1fr 130px 90px 36px;align-items:center;padding:1.3rem 0;border-bottom:1px solid var(--bdr);gap:1.4rem;cursor:pointer;position:relative;overflow:hidden;transition:padding .3s}
+.case::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(124,58,237,.05),transparent);transform:translateX(-101%);transition:transform .5s cubic-bezier(.23,1,.32,1)}
+.case:hover::before{transform:translateX(0)}
+.case:hover{padding:1.3rem 1rem}
+.cnum{font-size:.66rem;font-weight:600;color:var(--tx3)}
+.cname{font-size:clamp(1.3rem,2.1vw,1.75rem);font-weight:800;letter-spacing:-.025em;line-height:1;color:#fff}
+.ctype{font-size:.66rem;color:var(--tx3);margin-top:.18rem}
+.cres{font-size:.74rem;font-weight:600;color:#34D399;text-align:right}
+.ctag{font-size:.6rem;padding:.25rem .6rem;border-radius:100px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:var(--pu3);text-align:center}
+.carr{opacity:0;transform:translateX(-5px);transition:opacity .3s,transform .3s;display:flex;justify-content:flex-end}
+.case:hover .carr{opacity:1;transform:translateX(0)}
+.srow{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;margin-top:3rem}
+.scell{background:var(--bg2);padding:1.7rem;text-align:center;transition:background .3s}
+.scell:hover{background:rgba(124,58,237,.04)}
+.sval{font-size:2.1rem;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:.22rem;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.slbl{font-size:.65rem;color:var(--tx3);font-weight:500;letter-spacing:.05em;text-transform:uppercase}
+
+/* ─── INTEGRATIONS ──────────────────── */
+
+.lgrows{display:flex;flex-direction:column;gap:.85rem;align-items:center;margin-top:2.8rem}
+.lgrow{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap}
+.lgchip{background:var(--glass);border:1px solid var(--bdr);border-radius:11px;padding:.65rem 1.1rem;display:flex;align-items:center;gap:.58rem;transition:border-color .3s,background .3s;cursor:default}
+.lgchip:hover{border-color:rgba(124,58,237,.32);background:rgba(124,58,237,.06)}
+.bico{width:20px;height:20px;flex-shrink:0}
+.lgn{font-size:.79rem;font-weight:600;color:var(--tx2)}
+
+/* ─── CTA BAND ──────────────────────── */
+.cta-band{padding:6rem 2rem;text-align:center;position:relative;overflow:hidden}
+.ctaorb{position:absolute;width:700px;height:320px;border-radius:50%;background:rgba(124,58,237,.12);filter:blur(95px);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.ctabody{position:relative;z-index:1;max-width:600px;margin:0 auto}
+.ctah2{font-size:clamp(2rem,4.8vw,3.5rem);font-weight:800;letter-spacing:-.04em;line-height:1.12;margin-bottom:.95rem;color:#fff}
+.ctasub{font-size:.9rem;color:var(--tx2);max-width:400px;margin:0 auto 2rem;line-height:1.75}
+.ctabtns{display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap}
+.ctanote{font-size:.74rem;color:var(--tx3);margin-top:1rem}
+.ctanote a{color:var(--pu3)}
+
+/* ═══════════════════════════════════════
+   ABOUT PAGE
+═══════════════════════════════════════ */
+.page-head{padding:5rem 2.5rem 3.5rem;text-align:center;position:relative;overflow:hidden;background:var(--bg)}
+.page-head-z{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.page-head h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-bottom:.95rem;color:#fff}
+.page-head p{font-size:.96rem;color:var(--tx2);line-height:1.78;max-width:540px;margin:0 auto}
+
+.stgrid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.stleft h2{font-size:2.3rem;font-weight:800;letter-spacing:-.03em;line-height:1.2;margin-bottom:1.1rem;color:#fff}
+.stleft p{font-size:.86rem;color:var(--tx2);line-height:1.78;margin-bottom:.85rem}
+.stright{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.stcard{background:var(--glass);border:1px solid var(--bdr);border-radius:13px;padding:1.4rem;transition:border-color .3s}
+.stcard:hover{border-color:rgba(124,58,237,.28)}
+.stnum{font-size:1.95rem;font-weight:800;letter-spacing:-.03em;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.22rem}
+.stlab{font-size:.7rem;color:var(--tx2)}
+
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+.tmember{background:var(--glass);border:1px solid var(--bdr);border-radius:15px;padding:1.7rem;text-align:center;transition:border-color .3s,transform .3s}
+.tmember:hover{border-color:rgba(124,58,237,.28);transform:translateY(-4px)}
+.tavo{width:68px;height:68px;border-radius:50%;background:var(--gr);display:flex;align-items:center;justify-content:center;font-size:1.55rem;font-weight:700;margin:0 auto .85rem;box-shadow:0 8px 22px var(--glow)}
+.tmn{font-size:.9rem;font-weight:700;margin-bottom:.22rem;color:#fff}
+.tmr{font-size:.72rem;color:var(--pu3)}
+.tmbio{font-size:.7rem;color:var(--tx2);line-height:1.62;margin-top:.5rem}
+
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:.95rem;margin-top:2.5rem}
+.vcard{background:var(--glass);border:1px solid var(--bdr);border-radius:15px;padding:1.7rem;transition:border-color .3s}
+.vcard:hover{border-color:rgba(124,58,237,.28)}
+.vico{width:42px;height:42px;border-radius:10px;background:var(--gr);display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:.95rem;box-shadow:0 5px 14px var(--glow)}
+.vt{font-size:.9rem;font-weight:700;margin-bottom:.38rem;color:#fff}
+.vd{font-size:.74rem;color:var(--tx2);line-height:1.65}
+
+/* ═══════════════════════════════════════
+   SERVICES PAGE
+═══════════════════════════════════════ */
+.svgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:.95rem}
+.svc{background:var(--glass);border:1px solid var(--bdr);border-radius:17px;padding:1.9rem;transition:border-color .3s,transform .3s;position:relative;overflow:hidden}
+.svc:hover{border-color:rgba(124,58,237,.35);transform:translateY(-3px)}
+.svico{width:48px;height:48px;border-radius:12px;background:var(--gr);display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin-bottom:1.1rem;box-shadow:0 7px 18px var(--glow)}
+.svt{font-size:.97rem;font-weight:700;margin-bottom:.45rem;color:#fff}
+.svd{font-size:.78rem;color:var(--tx2);line-height:1.68;margin-bottom:.95rem}
+.svlist{list-style:none;display:flex;flex-direction:column;gap:.38rem}
+.svlist li{font-size:.72rem;color:var(--tx2);display:flex;align-items:flex-start;gap:.38rem}
+.svlist li::before{content:'→';color:var(--pu3);font-weight:600;flex-shrink:0}
+.svglow{position:absolute;width:140px;height:140px;border-radius:50%;background:rgba(124,58,237,.07);filter:blur(38px);bottom:-36px;right:-36px;pointer-events:none}
+
+.procgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:2.5rem}
+.proc{background:var(--bg2);padding:2.2rem 1.75rem;transition:background .3s}
+.proc:hover{background:rgba(124,58,237,.04)}
+.pnum-big{font-size:3rem;font-weight:800;letter-spacing:-.04em;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:1.2rem;opacity:.25;transition:opacity .3s}
+.proc:hover .pnum-big{opacity:1}
+.ptit{font-size:.93rem;font-weight:700;margin-bottom:.38rem;color:#fff}
+.pdesc-p{font-size:.72rem;color:var(--tx2);line-height:1.65}
+
+.flist{max-width:680px;margin:2.5rem auto 0;display:flex;flex-direction:column;gap:.5rem}
+.fi{background:var(--glass);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;transition:border-color .3s}
+.fi.open{border-color:rgba(124,58,237,.32)}
+.fq{display:flex;align-items:center;justify-content:space-between;padding:1.15rem 1.4rem;cursor:pointer;gap:1rem;font-size:.86rem;font-weight:600;color:#fff}
+.fic{width:24px;height:24px;border-radius:50%;background:rgba(124,58,237,.14);display:flex;align-items:center;justify-content:center;font-size:.76rem;color:var(--pu3);flex-shrink:0;transition:transform .3s}
+.fi.open .fic{transform:rotate(45deg);background:rgba(124,58,237,.26)}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-size:.78rem;color:var(--tx2);line-height:1.7;padding:0 1.4rem}
+.fi.open .fa{max-height:200px;padding:.06rem 1.4rem 1.3rem}
+
+/* ═══════════════════════════════════════
+   PRICING PAGE
+═══════════════════════════════════════ */
+.togglewrap{display:flex;align-items:center;justify-content:center;gap:.7rem;margin-bottom:2.8rem}
+.tgl{position:relative;width:40px;height:22px;border-radius:100px;background:rgba(124,58,237,.26);border:1px solid rgba(124,58,237,.36);cursor:pointer;transition:background .2s}
+.tgl.on{background:var(--pu)}
+.tknob{position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform .2s}
+.tgl.on .tknob{transform:translateX(18px)}
+.tlab{font-size:.78rem;font-weight:500;color:var(--tx2)}
+.savepill{font-size:.61rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:rgba(52,211,153,.1);color:#34D399;border:1px solid rgba(52,211,153,.18);border-radius:100px;padding:.18rem .5rem}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:.95rem;max-width:920px;margin:0 auto}
+.pc{background:var(--glass);border:1px solid var(--bdr);border-radius:18px;padding:1.9rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.pc:hover{border-color:rgba(124,58,237,.3);transform:translateY(-3px)}
+.pc.hot{border-color:rgba(124,58,237,.42);background:linear-gradient(145deg,rgba(124,58,237,.1),rgba(224,64,160,.05))}
+.ppill{position:absolute;top:1rem;right:1rem;font-size:.57rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--gr);color:#fff;border-radius:100px;padding:.2rem .58rem}
+.pplan{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pu3);margin-bottom:.42rem}
+.pwho{font-size:.66rem;color:var(--tx3);margin-bottom:.8rem}
+.pprice{display:flex;align-items:flex-end;gap:.15rem;margin-bottom:.3rem}
+.pcurr{font-size:1rem;font-weight:700;color:var(--tx2);margin-bottom:.34rem}
+.pnum{font-size:2.4rem;font-weight:800;letter-spacing:-.04em;line-height:1;color:#fff}
+.pper{font-size:.7rem;color:var(--tx3);padding-bottom:.3rem}
+.pdesc{font-size:.71rem;color:var(--tx2);margin-bottom:1.3rem;line-height:1.55}
+.pdiv{height:1px;background:var(--bdr);margin-bottom:1.3rem}
+.plist{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.6rem}
+.plist li{display:flex;align-items:flex-start;gap:.5rem;font-size:.72rem;color:var(--tx2);line-height:1.4}
+.plist li::before{content:'✓';color:#34D399;font-weight:700;flex-shrink:0;margin-top:1px}
+.plist li.no{color:var(--tx3)}.plist li.no::before{content:'–';color:var(--tx3)}
+.pbtn{width:100%;padding:.78rem;border-radius:9px;font-size:.8rem;font-weight:600;transition:all .2s;font-family:var(--ff)}
+.pbtn.out{background:transparent;border:1px solid var(--bdr2);color:var(--tx2)}
+.pbtn.out:hover{border-color:var(--pu2);color:#fff}
+.pbtn.fill{background:var(--gr);color:#fff;border:none;box-shadow:0 5px 14px var(--glow)}
+.pbtn.fill:hover{opacity:.87}
+
+.ctable{width:100%;border-collapse:collapse;border:1px solid var(--bdr);border-radius:13px;overflow:hidden}
+.ctable th,.ctable td{padding:.95rem 1.1rem;text-align:left;border-bottom:1px solid var(--bdr);font-size:.78rem}
+.ctable th{background:rgba(124,58,237,.08);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--pu3)}
+.ctable tr:last-child td{border-bottom:none}
+.ctable tr:hover td{background:rgba(124,58,237,.03)}
+.ctable td:not(:first-child){text-align:center;color:var(--tx2)}
+.ctable td:first-child{color:#fff;font-weight:500}
+.ctick{color:#34D399;font-size:.95rem;font-weight:700}
+.cno{color:var(--tx3)}
+
+/* faq on pricing */
+.pfaq{max-width:720px;margin:0 auto}
+
+/* ═══════════════════════════════════════
+   CONTACT PAGE
+═══════════════════════════════════════ */
+.ctgrid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start}
+.ctleft{display:flex;flex-direction:column;gap:.9rem}
+.ctinfo{background:var(--glass);border:1px solid var(--bdr);border-radius:14px;padding:1.5rem;transition:border-color .3s}
+.ctinfo:hover{border-color:rgba(124,58,237,.28)}
+.ctil{font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--pu3);margin-bottom:.42rem}
+.ctiv{font-size:.86rem;font-weight:600;color:#fff}
+.ctis{font-size:.71rem;color:var(--tx2);margin-top:.12rem}
+.ctform{background:var(--glass);border:1px solid var(--bdr);border-radius:17px;padding:2.3rem}
+.ctform h3{font-size:1.15rem;font-weight:700;margin-bottom:1.5rem;color:#fff}
+.fg{margin-bottom:1.2rem}
+.fg label{display:block;font-size:.72rem;font-weight:600;color:var(--tx2);margin-bottom:.38rem}
+.fg input,.fg select,.fg textarea{width:100%;padding:.68rem .9rem;background:rgba(255,255,255,.04);border:1px solid var(--bdr2);border-radius:9px;font-family:var(--ff);font-size:.8rem;color:#fff;outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--pu2)}
+.fg textarea{resize:vertical;min-height:115px}
+.fg select option{background:#111;color:#fff}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.sbtn{width:100%;padding:.82rem;border-radius:9px;background:var(--gr);color:#fff;font-size:.88rem;font-weight:700;box-shadow:0 5px 18px var(--glow);transition:opacity .2s;margin-top:.25rem;font-family:var(--ff);cursor:pointer;border:none}
+.sbtn:hover{opacity:.87}
+.formsuccess{display:none;text-align:center;padding:2rem;color:#34D399}
+.resp-times{background:var(--glass);border:1px solid var(--bdr);border-radius:14px;padding:1.5rem}
+.rtime-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.76rem}
+.rtime-row:last-child{border:none}
+.rtime-lbl{color:var(--tx2)}.rtime-val{color:#34D399;font-weight:600}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{background:var(--bg);border-top:1px solid var(--bdr);padding:4rem 2.5rem 2rem}
+.ftin{max-width:1140px;margin:0 auto}
+.fttop{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--bdr);margin-bottom:1.6rem}
+.ftblogo{display:flex;align-items:center;gap:.5rem;font-size:1.05rem;font-weight:800;margin-bottom:.8rem;color:#fff}
+.ftbp{font-size:.74rem;color:var(--tx3);line-height:1.65;max-width:230px}
+.ftcol h4{font-size:.63rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);margin-bottom:.95rem}
+.ftcol ul{list-style:none;display:flex;flex-direction:column;gap:.48rem}
+.ftcol a{font-size:.76rem;color:var(--tx2);transition:color .2s;cursor:pointer}
+.ftcol a:hover{color:#fff}
+.ftbot{display:flex;justify-content:space-between;align-items:center}
+.ftcopy{font-size:.68rem;color:var(--tx3)}
+.ftlinks{display:flex;gap:1.3rem}
+.ftlinks a{font-size:.68rem;color:var(--tx3);transition:color .2s}
+.ftlinks a:hover{color:var(--tx2)}
+
+/* ─── RESPONSIVE ──────────────────────── */
+@media(max-width:1040px){
+  .mbody{grid-template-columns:1fr}.mside{display:none}
+  .bento{grid-template-columns:1fr 1fr}.bc.wide{grid-column:span 2}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .fttop{grid-template-columns:1fr 1fr}
+  .tgrid{grid-template-columns:1fr 1fr}
+  .stgrid{grid-template-columns:1fr;gap:2.5rem}
+  .ctgrid{grid-template-columns:1fr}
+  .procgrid{grid-template-columns:1fr 1fr}
+  .svgrid{grid-template-columns:1fr 1fr}
+  .svs-wrap{grid-template-columns:1fr;gap:2.5rem}
+  .svs-left{position:static}
+  .fset-grid{grid-template-columns:1fr 1fr 1fr}
+  .fol-drawer-inner{grid-template-columns:1fr}
+  .fdl-head{border-right:none;padding-right:0;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:1.3rem}
+}
+@media(max-width:768px){
+  nav{padding:0 1.2rem}.nlinks{display:none}
+  .hero{padding:4rem 1.2rem 2.5rem}
+  .fcols{grid-template-columns:1fr 1fr}
+  .bento{grid-template-columns:1fr}.bc.wide{grid-column:span 1}
+  .pgrid{grid-template-columns:1fr}
+  .fttop{grid-template-columns:1fr}
+  .ftbot{flex-direction:column;gap:.9rem;text-align:center}
+  .srow{grid-template-columns:1fr 1fr}
+  .vgrid{grid-template-columns:1fr}
+  .case{grid-template-columns:auto 1fr;gap:.4rem}.cres,.ctag,.carr{display:none}
+  .frow{grid-template-columns:1fr}
+  .fset-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nlogo" onclick="goPage('home')">
+    <div class="nli">AX</div>
+    AdvertX.in
+  </div>
+  <ul class="nlinks">
+    <li><a onclick="goPage('home')" id="nl-home" class="active">Home</a></li>
+    <li><a onclick="goPage('about')" id="nl-about">About</a></li>
+    <li><a onclick="goPage('services')" id="nl-services">Services</a></li>
+    <li><a onclick="goPage('pricing')" id="nl-pricing">Pricing</a></li>
+    <li><a onclick="goPage('contact')" id="nl-contact">Contact</a></li>
+  </ul>
+  <div class="nr">
+    <button class="nbtn-ghost" onclick="goPage('contact')">Login</button>
+    <button class="nbtn-fill" onclick="goPage('contact')">Get Started</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════ -->
+<div id="phome" class="page active">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="bg-grid"></div>
+    <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+    <div class="hero-z">
+      <div class="hbadge"><div class="hbadge-dot">✦</div> India's #1 Performance Marketing Agency</div>
+      <h1 class="hh1">We Build Brands That<br><span class="grad">Dominate the Internet</span></h1>
+      <p class="hsub">From stunning websites to data-driven ad campaigns — we own the entire digital journey for your brand. Every rupee accountable.</p>
+      <div class="hbtns">
+        <button class="btn btn-primary" onclick="goPage('contact')">Start Growing Today →</button>
+        <button class="btn btn-ghost" onclick="goPage('services')">Explore Services</button>
+      </div>
+      <div class="htrust">
+        <div class="avts">
+          <div class="av" style="background:linear-gradient(135deg,#7C3AED,#E040A0)">R</div>
+          <div class="av" style="background:linear-gradient(135deg,#3B82F6,#7C3AED)">A</div>
+          <div class="av" style="background:linear-gradient(135deg,#E040A0,#F59E0B)">K</div>
+          <div class="av" style="background:linear-gradient(135deg,#10B981,#3B82F6)">S</div>
+        </div>
+        <div>
+          <span class="hstars">★★★★★</span>
+          <div class="htxt">Trusted by 200+ Indian brands</div>
+        </div>
+      </div>
+      <!-- Dashboard Mockup -->
+      <div class="hmock">
+        <div class="mframe">
+          <div class="mbar">
+            <div class="md r"></div><div class="md y"></div><div class="md g"></div>
+            <div class="murl">app.advertx.in/dashboard</div>
+          </div>
+          <div class="mbody">
+            <div class="mside">
+              <div class="mnav act">📊 Overview</div>
+              <div class="mnav">📣 Campaigns</div>
+              <div class="mnav">🌐 Website</div>
+              <div class="mnav">📝 Content</div>
+              <div class="mnav">📈 Analytics</div>
+              <div class="mnav">⚙️ Settings</div>
+            </div>
+            <div class="mmain">
+              <div class="sr4">
+                <div class="sc"><div class="sv p">6.2×</div><div class="sl">ROAS</div><div class="sc2">↑ +0.8 this week</div></div>
+                <div class="sc"><div class="sv g">₹18.4L</div><div class="sl">Revenue</div><div class="sc2">↑ +24% MoM</div></div>
+                <div class="sc"><div class="sv y">342%</div><div class="sl">Conv. Rate</div><div class="sc2">↑ +62pts</div></div>
+                <div class="sc"><div class="sv">₹2.95</div><div class="sl">Cost per Click</div><div class="sc2">↓ -0.40</div></div>
+              </div>
+              <div class="cc">
+                <div class="chd"><div class="ctt">Revenue Growth</div><div class="cp">+24% MoM</div></div>
+                <svg viewBox="0 0 700 120" style="width:100%;height:75px">
+                  <defs>
+                    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(124,58,237,.25)"/><stop offset="100%" stop-color="rgba(124,58,237,0)"/></linearGradient>
+                    <linearGradient id="cg" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#E040A0"/></linearGradient>
+                  </defs>
+                  <path d="M0,108 C70,106 110,96 175,82 C240,68 280,60 345,46 C410,32 450,24 510,16 C560,10 620,6 700,4 L700,120 L0,120 Z" fill="url(#lg)"/>
+                  <path d="M0,108 C70,106 110,96 175,82 C240,68 280,60 345,46 C410,32 450,24 510,16 C560,10 620,6 700,4" fill="none" stroke="url(#cg)" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="700" cy="4" r="4" fill="#E040A0"/>
+                </svg>
+              </div>
+              <div class="cmc">
+                <div class="cmt">Active Campaigns</div>
+                <div class="cmr"><div><div class="cn">EcoHarvest — Google Search</div><div class="cpl">Google Ads · Mumbai</div></div><div class="cr">6.2× ROAS</div><span class="tl lv">Live</span></div>
+                <div class="cmr"><div><div class="cn">NexPay — Meta Retargeting</div><div class="cpl">Facebook + Instagram</div></div><div class="cr">4.1× ROAS</div><span class="tl lv">Live</span></div>
+                <div class="cmr"><div><div class="cn">Lumina — Brand Launch</div><div class="cpl">YouTube + Display</div></div><div class="cr">3.8× ROAS</div><span class="tl op">Optimising</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fch fc1"><div class="chl">This Week</div><div class="chv g">+342%</div><div class="chs">Conversions</div></div>
+        <div class="fch fc2"><div class="chl">Avg ROAS</div><div class="chv p">4.8×</div><div class="chs">All clients</div></div>
+        <div class="fch fc3"><div class="chl">Brands Live</div><div class="chv y">200+</div><div class="chs">&amp; growing</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticker -->
+  <div class="ticker">
+    <div class="tkl">Trusted by India's fastest-growing brands</div>
+    <div style="overflow:hidden">
+      <div class="tkt">
+        <span class="tkn">Zomato</span><span class="tkn">PhonePe</span><span class="tkn">Razorpay</span><span class="tkn">Meesho</span><span class="tkn">Zepto</span><span class="tkn">ShareChat</span><span class="tkn">boAt</span><span class="tkn">Nykaa</span><span class="tkn">Urban Company</span><span class="tkn">Lenskart</span><span class="tkn">Groww</span><span class="tkn">CoinSwitch</span>
+        <span class="tkn">Zomato</span><span class="tkn">PhonePe</span><span class="tkn">Razorpay</span><span class="tkn">Meesho</span><span class="tkn">Zepto</span><span class="tkn">ShareChat</span><span class="tkn">boAt</span><span class="tkn">Nykaa</span><span class="tkn">Urban Company</span><span class="tkn">Lenskart</span><span class="tkn">Groww</span><span class="tkn">CoinSwitch</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4-col scroll features -->
+  <div class="feat-sec sec">
+    <div class="con">
+      <div class="sec-label center sr">
+        <div class="pill"><span class="pd"></span>What We Do</div>
+        <h2 class="h2">Everything Your Brand Needs<br>to <span class="grad">Dominate Online</span></h2>
+        <p class="sub">From stunning websites to data-driven ad campaigns — we own the entire digital journey.</p>
+      </div>
+      <div class="fcols sr d1" style="margin-top:2.8rem">
+        <div class="fcol dn">
+          <div class="fcard"><div class="fico">🌐</div><div class="ftit">Website Design &amp; Dev</div><div class="fdesc">Custom mobile-first websites built to convert visitors into paying customers from day one.</div><div class="ftags"><span class="ft">React</span><span class="ft">Webflow</span><span class="ft">Next.js</span></div></div>
+          <div class="fcard"><div class="fico">📣</div><div class="ftit">Google Ads (PPC)</div><div class="fdesc">Search, Shopping &amp; Display with precision targeting and crystal-clear return on investment.</div><div class="ftags"><span class="ft">Search</span><span class="ft">Shopping</span><span class="ft">Display</span></div></div>
+          <div class="fcard"><div class="fico">✦</div><div class="ftit">Brand Identity</div><div class="fdesc">Logo, typography, colour systems and brand guidelines for instant market recognition.</div><div class="ftags"><span class="ft">Logo</span><span class="ft">Guidelines</span></div></div>
+          <div class="fcard"><div class="fico">🌐</div><div class="ftit">Website Design &amp; Dev</div><div class="fdesc">Custom mobile-first websites built to convert visitors into paying customers.</div><div class="ftags"><span class="ft">React</span><span class="ft">Next.js</span></div></div>
+          <div class="fcard"><div class="fico">📣</div><div class="ftit">Google Ads (PPC)</div><div class="fdesc">Precision targeting — every rupee accounted for, every campaign optimised weekly.</div><div class="ftags"><span class="ft">Search</span><span class="ft">Shopping</span></div></div>
+          <div class="fcard"><div class="fico">✦</div><div class="ftit">Brand Identity</div><div class="fdesc">Logo, colour systems and guidelines for consistent, memorable market recognition.</div><div class="ftags"><span class="ft">Logo</span><span class="ft">Guidelines</span></div></div>
+        </div>
+        <div class="fcol up">
+          <div class="fcard"><div class="fico">📱</div><div class="ftit">Meta &amp; Instagram Ads</div><div class="fdesc">Scroll-stopping creatives and audience targeting that turns browsers into buyers.</div><div class="ftags"><span class="ft">Facebook</span><span class="ft">Instagram</span><span class="ft">Reels</span></div></div>
+          <div class="fcard"><div class="fico">📝</div><div class="ftit">SEO &amp; Content</div><div class="fdesc">Organic traffic strategies that compound over months and reduce your cost per lead.</div><div class="ftags"><span class="ft">On-page</span><span class="ft">Technical</span><span class="ft">Off-page</span></div></div>
+          <div class="fcard"><div class="fico">📧</div><div class="ftit">Email Automation</div><div class="fdesc">Drip sequences and lifecycle campaigns that nurture leads into loyal customers on autopilot.</div><div class="ftags"><span class="ft">Klaviyo</span><span class="ft">Mailchimp</span></div></div>
+          <div class="fcard"><div class="fico">📱</div><div class="ftit">Meta &amp; Instagram Ads</div><div class="fdesc">Scroll-stopping creatives and audience targeting that turn browsers into buyers.</div><div class="ftags"><span class="ft">Facebook</span><span class="ft">Instagram</span></div></div>
+          <div class="fcard"><div class="fico">📝</div><div class="ftit">SEO &amp; Content</div><div class="fdesc">Organic strategies that compound over time and reduce cost per lead systematically.</div><div class="ftags"><span class="ft">On-page</span><span class="ft">Technical</span></div></div>
+          <div class="fcard"><div class="fico">📧</div><div class="ftit">Email Automation</div><div class="fdesc">Smart drip sequences that nurture leads into paying customers automatically.</div><div class="ftags"><span class="ft">Klaviyo</span><span class="ft">Mailchimp</span></div></div>
+        </div>
+        <div class="fcol dn">
+          <div class="fcard"><div class="fico">📺</div><div class="ftit">YouTube Advertising</div><div class="fdesc">Video campaigns that build brand awareness and drive measurable conversions at scale.</div><div class="ftags"><span class="ft">Pre-roll</span><span class="ft">Discovery</span></div></div>
+          <div class="fcard"><div class="fico">🎨</div><div class="ftit">Social Media Mgmt</div><div class="fdesc">On-brand content calendars that build community and drive consistent weekly engagement.</div><div class="ftags"><span class="ft">Instagram</span><span class="ft">LinkedIn</span></div></div>
+          <div class="fcard"><div class="fico">📊</div><div class="ftit">Analytics &amp; Reporting</div><div class="fdesc">Real-time dashboards showing exactly where every rupee goes and what to scale next.</div><div class="ftags"><span class="ft">GA4</span><span class="ft">Looker</span></div></div>
+          <div class="fcard"><div class="fico">📺</div><div class="ftit">YouTube Advertising</div><div class="fdesc">Video ad campaigns that build brand recall and drive measurable conversions.</div><div class="ftags"><span class="ft">Pre-roll</span><span class="ft">Discovery</span></div></div>
+          <div class="fcard"><div class="fico">🎨</div><div class="ftit">Social Media Mgmt</div><div class="fdesc">On-brand content that builds community and drives consistent engagement.</div><div class="ftags"><span class="ft">Instagram</span><span class="ft">LinkedIn</span></div></div>
+          <div class="fcard"><div class="fico">📊</div><div class="ftit">Analytics</div><div class="fdesc">Clear dashboards showing what's working and what deserves more budget.</div><div class="ftags"><span class="ft">GA4</span><span class="ft">Looker</span></div></div>
+        </div>
+        <div class="fcol up">
+          <div class="fcard"><div class="fico">🚀</div><div class="ftit">Performance Marketing</div><div class="fdesc">Full-funnel multi-channel strategies optimised for maximum ROAS every single month.</div><div class="ftags"><span class="ft">Multi-channel</span><span class="ft">Full-funnel</span></div></div>
+          <div class="fcard"><div class="fico">🎯</div><div class="ftit">Conversion Rate Optim.</div><div class="fdesc">A/B testing and landing page improvements that double conversions without extra spend.</div><div class="ftags"><span class="ft">A/B Tests</span><span class="ft">CRO</span></div></div>
+          <div class="fcard"><div class="fico">💼</div><div class="ftit">LinkedIn B2B Ads</div><div class="fdesc">Precision B2B campaigns targeting decision-makers and generating enterprise leads.</div><div class="ftags"><span class="ft">Lead Gen</span><span class="ft">Sponsored</span></div></div>
+          <div class="fcard"><div class="fico">🚀</div><div class="ftit">Performance Marketing</div><div class="fdesc">Full-funnel strategies across every channel optimised for maximum ROAS.</div><div class="ftags"><span class="ft">Multi-channel</span></div></div>
+          <div class="fcard"><div class="fico">🎯</div><div class="ftit">CRO</div><div class="fdesc">Testing and UX improvements that double conversions without spending more on ads.</div><div class="ftags"><span class="ft">A/B Tests</span><span class="ft">CRO</span></div></div>
+          <div class="fcard"><div class="fico">💼</div><div class="ftit">LinkedIn B2B</div><div class="fdesc">Campaigns targeting decision-makers, generating high-quality enterprise leads.</div><div class="ftags"><span class="ft">Lead Gen</span><span class="ft">Sponsored</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Sticky Section 4 -->
+  <div class="svsec">
+    <div class="con">
+      <div class="svs-wrap">
+        <div class="svs-left sr">
+          <div class="svs-left-inner">
+            <div class="pill" style="margin-bottom:.9rem"><span class="pd"></span>Our Services</div>
+            <h2 class="h2" style="margin-bottom:.85rem;font-size:clamp(1.6rem,2.8vw,2.2rem)">Every Digital Marketing<br><span class="grad">Service You Need</span></h2>
+            <p style="font-size:.83rem;color:var(--tx2);line-height:1.72;margin-bottom:1.3rem">From brand identity to performance ads — we handle every channel so you can focus on building your business.</p>
+            <div class="svs-stats">
+              <div class="svs-stat"><div class="svs-val">12+</div><div class="svs-lab">Services</div></div>
+              <div class="svs-stat"><div class="svs-val">4.8×</div><div class="svs-lab">Avg ROAS</div></div>
+              <div class="svs-stat"><div class="svs-val">200+</div><div class="svs-lab">Brands</div></div>
+            </div>
+            <button class="btn btn-primary" style="width:100%;margin-top:1.5rem;justify-content:center" onclick="goPage('contact')">Get a Free Audit →</button>
+          </div>
+        </div>
+        <div class="svs-right sr d1">
+          <!-- SET 1 -->
+          <div class="fset" id="fset1">
+            <div class="fset-grid">
+              <div class="fol-card" data-set="fset1" data-idx="0" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="fol-name">Website Design &amp; Dev</div><div class="fol-tag">Design &amp; Dev</div></div></div>
+              <div class="fol-card" data-set="fset1" data-idx="1" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><div class="fol-name">Google Ads (PPC)</div><div class="fol-tag">Paid Ads</div></div></div>
+              <div class="fol-card" data-set="fset1" data-idx="2" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="fol-name">Brand Identity</div><div class="fol-tag">Branding</div></div></div>
+            </div>
+            <div class="fol-drawer" id="fdrawer-fset1" style="position:relative"><div class="fol-drawer-inner" id="fdinner-fset1"></div></div>
+          </div>
+          <!-- SET 2 -->
+          <div class="fset" id="fset2">
+            <div class="fset-grid">
+              <div class="fol-card" data-set="fset2" data-idx="0" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><rect x="13" y="13" width="9" height="9" rx="1.5"/></svg></div><div class="fol-name">Meta &amp; Instagram Ads</div><div class="fol-tag">Social Ads</div></div></div>
+              <div class="fol-card" data-set="fset2" data-idx="1" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="fol-name">SEO &amp; Content</div><div class="fol-tag">Organic</div></div></div>
+              <div class="fol-card" data-set="fset2" data-idx="2" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="fol-name">Email Automation</div><div class="fol-tag">Automation</div></div></div>
+            </div>
+            <div class="fol-drawer" id="fdrawer-fset2" style="position:relative"><div class="fol-drawer-inner" id="fdinner-fset2"></div></div>
+          </div>
+          <!-- SET 3 -->
+          <div class="fset" id="fset3">
+            <div class="fset-grid">
+              <div class="fol-card" data-set="fset3" data-idx="0" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div class="fol-name">YouTube Ads</div><div class="fol-tag">Video Ads</div></div></div>
+              <div class="fol-card" data-set="fset3" data-idx="1" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="fol-name">Social Media Mgmt</div><div class="fol-tag">Social</div></div></div>
+              <div class="fol-card" data-set="fset3" data-idx="2" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="fol-name">Analytics &amp; Reporting</div><div class="fol-tag">Analytics</div></div></div>
+            </div>
+            <div class="fol-drawer" id="fdrawer-fset3" style="position:relative"><div class="fol-drawer-inner" id="fdinner-fset3"></div></div>
+          </div>
+          <!-- SET 4 -->
+          <div class="fset" id="fset4">
+            <div class="fset-grid">
+              <div class="fol-card" data-set="fset4" data-idx="0" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="fol-name">Performance Marketing</div><div class="fol-tag">Full Funnel</div></div></div>
+              <div class="fol-card" data-set="fset4" data-idx="1" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div class="fol-name">CRO</div><div class="fol-tag">Conversion</div></div></div>
+              <div class="fol-card" data-set="fset4" data-idx="2" onclick="openFolder(this)"><div class="fol-face"><div class="fol-ico-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div class="fol-name">LinkedIn B2B</div><div class="fol-tag">B2B</div></div></div>
+            </div>
+            <div class="fol-drawer" id="fdrawer-fset4" style="position:relative"><div class="fol-drawer-inner" id="fdinner-fset4"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bento -->
+  <div class="sec bento-sec" style="background:var(--bg)">
+    <div class="con">
+      <div class="sec-label center sr">
+        <div class="pill"><span class="pd"></span>Our Edge</div>
+        <h2 class="h2">Numbers That Speak<br><span class="grad">For Themselves</span></h2>
+        <p class="sub">Real results from real clients across India. No vanity metrics.</p>
+      </div>
+      <div class="bento sr d1">
+        <div class="bc wide"><div class="bcico">📈</div><div class="bctit">Highest ROAS in the Industry</div><div class="bcdesc">Clients average 4.8× return on ad spend — more than double the industry average of 2.1×. We don't run ads, we build revenue machines that scale predictably every month.</div><div class="mbars"><div class="mb" style="height:28%"></div><div class="mb" style="height:40%"></div><div class="mb" style="height:52%"></div><div class="mb a" style="height:68%"></div><div class="mb a" style="height:78%"></div><div class="mb a" style="height:88%"></div><div class="mb a" style="height:100%"></div><div class="mb" style="height:34%"></div><div class="mb a" style="height:82%"></div><div class="mb a" style="height:96%"></div></div><div class="bcglow"></div></div>
+        <div class="bc"><div class="bcnum">98%</div><div class="bctit">Client Retention Rate</div><div class="bcdesc">When results speak, clients stay. 98% of our clients renew every year.<div class="bcglow"></div></div></div>
+        <div class="bc"><div class="bcico">⚡</div><div class="bctit">Ultrafast Delivery</div><div class="bcdesc">Websites live in 2–4 weeks. Ad campaigns running within 72 hours. We move at the speed of your ambition.</div></div>
+        <div class="bc"><div class="bcico">🎯</div><div class="bctit">Strategy First, Always</div><div class="bcdesc">Every rupee planned before it's spent. Full competitor analysis and revenue-led strategy before a single design is made.</div></div>
+        <div class="bc wide"><div class="bcnum">₹50Cr+</div><div class="bctit">Ad Spend Managed</div><div class="bcdesc">Over ₹50 crore in client budgets managed across Google, Meta, YouTube, and LinkedIn. We know exactly where every paisa goes and why.<div class="bcglow"></div></div></div>
+        <div class="bc"><div class="bcico">🇮🇳</div><div class="bctit">Made for India</div><div class="bcdesc">India-first thinking with global standards. Regional markets, consumer behaviour, and festival cycles — all mastered.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="testi">
+    <div class="con">
+      <div class="tehead sr" style="text-align:center">
+        <div class="pill" style="margin-bottom:.8rem"><span class="pd"></span>Client Reviews</div>
+        <h2 class="h2">Real Brands, <span class="grad">Real Results</span></h2>
+        <p class="sub" style="margin:0 auto;margin-top:.6rem">See how AdvertX is helping India's brands grow faster and stronger.</p>
+      </div>
+    </div>
+    <div class="trows" style="margin-top:2.8rem">
+      <div class="trow tr1">
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#7C3AED,#E040A0)">R</div><div><div class="tname">Riya Sharma</div><div class="trole">CMO, EcoHarvest Foods</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"AdvertX completely transformed our online presence. Website conversions jumped 342% in 60 days and Google Ads consistently delivers 6× ROAS."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#3B82F6,#7C3AED)">A</div><div><div class="tname">Arjun Mehta</div><div class="trole">Founder, NexPay</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"We went from struggling with paid ads to 4.8× ROAS within 45 days. The Meta advertising approach is miles ahead of anyone else we've worked with."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#E040A0,#F59E0B)">K</div><div><div class="tname">Kavya Nair</div><div class="trole">CEO, Lumina Wear</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"AdvertX took our brand from zero to ₹2 crore/month in just 6 months. Brand identity is stunning, ads are phenomenal."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#10B981,#3B82F6)">S</div><div><div class="tname">Siddharth Rao</div><div class="trole">Growth Head, ZenMind</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"Organic traffic grew 312% in 4 months. SEO strategy is deeply data-driven and reporting is crystal clear. Always ahead of the curve."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#7C3AED,#E040A0)">R</div><div><div class="tname">Riya Sharma</div><div class="trole">CMO, EcoHarvest Foods</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"Conversions jumped 342% in 60 days and Google Ads delivers 6× ROAS consistently. Best investment we've made."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#3B82F6,#7C3AED)">A</div><div><div class="tname">Arjun Mehta</div><div class="trole">Founder, NexPay</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"4.8× ROAS within 45 days. Best Meta advertising team we've ever worked with in India."</div></div>
+      </div>
+      <div class="trow tr2">
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#F59E0B,#E040A0)">P</div><div><div class="tname">Priya Iyer</div><div class="trole">Director, VoltEdge Tech</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"LinkedIn campaigns quadrupled enterprise lead volume. Website redesign cut bounce rate 55%. Exceptional ROI from day one."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#10B981,#7C3AED)">V</div><div><div class="tname">Vikram Patel</div><div class="trole">Co-founder, FreshCart</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"Full digital launch executed perfectly. 90 days to category recognition. The combination of branding, website and ads is simply unbeatable."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#E040A0,#7C3AED)">N</div><div><div class="tname">Neha Kulkarni</div><div class="trole">Marketing Manager, CleverBooks</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"Email automation now generates 22% of total revenue — fully automated. AdvertX set it up in 3 weeks. ROI keeps compounding."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#3B82F6,#10B981)">R</div><div><div class="tname">Rahul Desai</div><div class="trole">Brand Head, SkyFit</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"YouTube ad strategy is next-level. Brand search volume increased 400% in 3 months. They understand performance and branding simultaneously."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#F59E0B,#E040A0)">P</div><div><div class="tname">Priya Iyer</div><div class="trole">Director, VoltEdge Tech</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"LinkedIn campaigns quadrupled enterprise leads and website redesign cut bounce rate 55%."</div></div>
+        <div class="tcard"><div class="ttop"><div class="tav" style="background:linear-gradient(135deg,#10B981,#7C3AED)">V</div><div><div class="tname">Vikram Patel</div><div class="trole">Co-founder, FreshCart</div></div></div><div class="tstars">★★★★★</div><div class="ttxt">"90 days to category recognition. Branding, website, and ads — all absolutely flawless."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Case Studies -->
+  <div class="casesec">
+    <div class="con">
+    <div class="cwrap sr">
+      <div>
+        <div class="pill" style="margin-bottom:.8rem"><span class="pd"></span>Selected Work</div>
+        <h2 class="h2">Projects That <span class="grad">Moved the Needle</span></h2>
+      </div>
+      <button class="btn btn-ghost" onclick="goPage('services')">All Services →</button>
+    </div>
+    <div class="cases sr d1">
+      <div class="case"><span class="cnum">001</span><div><div class="cname">EcoHarvest</div><div class="ctype">Website Redesign + Google Ads</div></div><div class="cres">+342% Conversions</div><div class="ctag">Branding</div><div class="carr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C4A0FF" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="case"><span class="cnum">002</span><div><div class="cname">NexPay</div><div class="ctype">Meta Advertising + Brand Identity</div></div><div class="cres">6.2× ROAS</div><div class="ctag">Ads</div><div class="carr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C4A0FF" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="case"><span class="cnum">003</span><div><div class="cname">Lumina Wear</div><div class="ctype">Full Brand Launch + Performance Ads</div></div><div class="cres">₹0→₹2Cr/month</div><div class="ctag">Full Stack</div><div class="carr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C4A0FF" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="case"><span class="cnum">004</span><div><div class="cname">ZenMind</div><div class="ctype">SEO + Content + YouTube Ads</div></div><div class="cres">312% Organic Growth</div><div class="ctag">SEO</div><div class="carr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C4A0FF" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+      <div class="case"><span class="cnum">005</span><div><div class="cname">VoltEdge</div><div class="ctype">Website + CRO + LinkedIn B2B</div></div><div class="cres">4× Lead Volume</div><div class="ctag">B2B</div><div class="carr"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C4A0FF" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div></div>
+    </div>
+    <div class="srow sr d2" style="margin-bottom:0">
+      <div class="scell"><div class="sval">200+</div><div class="slbl">Brands Built</div></div>
+      <div class="scell"><div class="sval">4.8×</div><div class="slbl">Avg ROAS</div></div>
+      <div class="scell"><div class="sval">₹50Cr</div><div class="slbl">Ad Spend Managed</div></div>
+      <div class="scell"><div class="sval">98%</div><div class="slbl">Client Retention</div></div>
+    </div>
+    </div><!-- /con -->
+  </div><!-- /casesec -->
+
+  <!-- Integrations -->
+  <div class="intsec sec">
+    <div class="con">
+      <div class="sec-label center sr" style="margin-bottom:2rem">
+        <div class="pill"><span class="pd"></span>Platforms &amp; Tools</div>
+        <h2 class="h2">We Work With<br><span class="grad">Every Major Platform</span></h2>
+        <p class="sub">From Google Ads to Shopify — we integrate seamlessly with the tools that power your business.</p>
+      </div>
+      <div class="lgrows sr d1">
+        <div class="lgrow">
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="none"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" fill="#4285F4"/></svg><span class="lgn">Google Ads</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span class="lgn">Meta Ads</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><span class="lgn">YouTube</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="lgn">LinkedIn</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="#96BF48"><path d="M15.337.15c-.14.044-.377.132-.377.132C14.576.094 14.07 0 13.5 0c-1.557 0-2.31.85-2.573 1.7-.575.172-1.15.35-1.72.537C8.636 2.49 8.06 2.72 7.48 2.95c0 0-1.63 6.84-1.63 6.84L14.5 12 24 9.84C24 9.84 16.12.61 15.337.15z"/></svg><span class="lgn">Shopify</span></div>
+        </div>
+        <div class="lgrow">
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24"><defs><linearGradient id="ga4g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F9AB00"/><stop offset="100%" stop-color="#E37400"/></linearGradient></defs><rect x="1" y="11" width="5" height="12" rx="1.5" fill="#E37400"/><rect x="9.5" y="6" width="5" height="17" rx="1.5" fill="url(#ga4g)"/><rect x="18" y="1" width="5" height="22" rx="1.5" fill="#4285F4"/></svg><span class="lgn">Google Analytics 4</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24"><defs><linearGradient id="lkg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4285F4"/><stop offset="100%" stop-color="#34A853"/></linearGradient></defs><circle cx="12" cy="12" r="10" fill="none" stroke="url(#lkg)" stroke-width="2.5"/><path d="M7 12h10M12 7v10" stroke="url(#lkg)" stroke-width="2" stroke-linecap="round"/></svg><span class="lgn">Looker Studio</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#FFD700"/><path d="M6 18V6h3l5 6-5 6H6z" fill="#1A1A1A"/></svg><span class="lgn">Klaviyo</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="#FF7A59"><path d="M22.452 14.424a5.55 5.55 0 0 1-4.665 2.563 5.572 5.572 0 0 1-5.57-5.57c0-2.66 1.877-4.9 4.38-5.448V3.75A1.75 1.75 0 0 0 14.847 2H14.1a1.75 1.75 0 0 0-1.75 1.75v.968a7.82 7.82 0 0 0-4.532 2.534L5.757 5.49a1.71 1.71 0 1 0-1.237 1.274l2.2 1.819A7.793 7.793 0 0 0 5.44 12.817c0 4.311 3.512 7.822 7.823 7.822a7.82 7.82 0 0 0 7.28-4.966l-2.091-1.249z"/></svg><span class="lgn">HubSpot</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg><span class="lgn">WhatsApp Business</span></div>
+        </div>
+        <div class="lgrow">
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="#4353FF"><path d="M17.842 9.257s-2.153 6.66-2.33 7.26c-.136-1.384-.972-7.26-.972-7.26H11.38s-2.207 6.736-2.366 7.283c-.107-1.4-.972-7.283-.972-7.283H4.62L7.24 18.77h3.377s2.16-6.526 2.306-7.012c.107 1.386.975 7.012.975 7.012h3.39l3.095-9.513h-2.541z"/></svg><span class="lgn">Webflow</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="#21759B"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM3.457 12c0-1.189.243-2.32.676-3.349L7.6 19.114A8.556 8.556 0 0 1 3.457 12zm8.543 8.543a8.528 8.528 0 0 1-2.434-.355l2.585-7.505 2.647 7.253a8.525 8.525 0 0 1-2.858.483zm1.174-12.694c.513-.027.974-.082.974-.082.459-.054.405-.728-.054-.701 0 0-1.378.108-2.268.108-.836 0-2.242-.108-2.242-.108-.459-.027-.513.674-.054.701 0 0 .435.055.893.082l1.327 3.635-1.861 5.58-3.097-9.215c.512-.027.973-.082.973-.082.459-.054.405-.728-.054-.701 0 0-1.377.108-2.267.108A8.546 8.546 0 0 1 12 3.457c2.213 0 4.235.841 5.748 2.217-1.756 0-3.002 1.529-3.002 3.17 0 1.475.851 2.717 1.756 4.193.674 1.189 1.324 2.716 1.324 4.193l-1.473-4.921zm4.381 9.405-2.538-6.934c.497-.946.803-2.053.803-3.268a8.559 8.559 0 0 1 1.862 9.571z"/></svg><span class="lgn">WordPress</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24"><path d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4z" fill="#0ACF83"/><path d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4z" fill="#A259FF"/><path d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4z" fill="#F24E1E"/><path d="M12 0h4c2.208 0 4 1.792 4 4s-1.792 4-4 4h-4V0z" fill="#FF7262"/><path d="M20 12c0 2.208-1.792 4-4 4s-4-1.792-4-4 1.792-4 4-4 4 1.792 4 4z" fill="#1ABCFE"/></svg><span class="lgn">Figma</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="lgn">X / Twitter Ads</span></div>
+          <div class="lgchip"><svg class="bico" viewBox="0 0 24 24" fill="#FFE01B"><path d="M21.432 12.208c.136-.245.213-.525.213-.82 0-.96-.78-1.74-1.74-1.74a1.74 1.74 0 0 0-.397.046c-.29-1.54-1.05-2.95-2.163-4.03A7.74 7.74 0 0 0 12 3.5a7.74 7.74 0 0 0-5.345 2.164c-1.114 1.08-1.872 2.49-2.163 4.03a1.737 1.737 0 0 0-.397-.046C3.135 9.648 2.5 10.288 2.5 11.388c0 .295.077.575.213.82A4.5 4.5 0 0 0 2.5 14a4.5 4.5 0 0 0 4.5 4.5h10A4.5 4.5 0 0 0 21.5 14a4.5 4.5 0 0 0-.068-.792z"/></svg><span class="lgn">Mailchimp</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="ctaorb"></div>
+    <div class="ctabody sr">
+      <div class="pill" style="margin-bottom:1rem"><span class="pd"></span>Ready to Grow?</div>
+      <h2 class="ctah2">Let's Build Something<br><span class="grad">Legendary Together</span></h2>
+      <p class="ctasub">Tell us about your brand and we'll come back with a clear, honest growth plan — no pressure, no jargon.</p>
+      <div class="ctabtns">
+        <button class="btn btn-primary" onclick="goPage('contact')">Start a Project →</button>
+        <button class="btn btn-ghost" onclick="goPage('contact')">Book a Free Call</button>
+      </div>
+      <div class="ctanote">Or email us at <a href="mailto:hello@advertx.in">hello@advertx.in</a></div>
+    </div>
+  </div>
+  <footer>
+    <div class="ftin">
+      <div class="fttop">
+        <div><div class="ftblogo"><div class="nli">AX</div>AdvertX.in</div><p class="ftbp">India's performance-first digital marketing agency. Every rupee accountable, every campaign optimised.</p></div>
+        <div class="ftcol"><h4>Services</h4><ul><li><a onclick="goPage('services')">Website Design</a></li><li><a onclick="goPage('services')">Google Ads</a></li><li><a onclick="goPage('services')">Meta Ads</a></li><li><a onclick="goPage('services')">SEO</a></li><li><a onclick="goPage('services')">Brand Identity</a></li></ul></div>
+        <div class="ftcol"><h4>Company</h4><ul><li><a onclick="goPage('about')">About Us</a></li><li><a onclick="goPage('pricing')">Pricing</a></li><li><a onclick="goPage('contact')">Contact</a></li><li><a>Careers</a></li><li><a>Blog</a></li></ul></div>
+        <div class="ftcol"><h4>Connect</h4><ul><li><a>LinkedIn</a></li><li><a>Instagram</a></li><li><a>Twitter / X</a></li><li><a>YouTube</a></li><li><a href="mailto:hello@advertx.in">hello@advertx.in</a></li></ul></div>
+      </div>
+      <div class="ftbot"><span class="ftcopy">© 2025 AdvertX.in. All rights reserved.</span><div class="ftlinks"><a>Privacy Policy</a><a>Terms of Service</a><a>Cookie Policy</a></div></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════
+     ABOUT PAGE
+═══════════════════════════════════ -->
+<div id="pabout" class="page">
+  <div class="page-head">
+    <div class="bg-grid"></div>
+    <div class="orb o1"></div><div class="orb o2"></div>
+    <div class="page-head-z">
+      <div class="pill" style="margin-bottom:1rem"><span class="pd"></span>About AdvertX</div>
+      <h1>We're the Digital Growth<br><span class="grad">Agency That Delivers</span></h1>
+      <p>Founded with a simple belief — Indian brands deserve world-class digital marketing. We're strategists, designers, developers, and data nerds obsessed with one thing: your growth.</p>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="con">
+      <div class="stgrid">
+        <div class="stleft sr">
+          <div class="pill" style="margin-bottom:.9rem"><span class="pd"></span>Our Story</div>
+          <h2>Built by Marketers,<br><span class="grad">for Ambitious Brands</span></h2>
+          <p>AdvertX was founded in 2020 by a team frustrated by agencies that overpromised and underdelivered. We set out to build something different — a performance-first agency where every decision is backed by data and every rupee is accounted for.</p>
+          <p>Today, we've helped 200+ brands across India build powerful digital presences, generate millions in revenue, and achieve returns that genuinely move the business needle.</p>
+          <p style="font-weight:600;color:#fff">We're not a vendor. We're your growth partner.</p>
+        </div>
+        <div class="stright sr d2">
+          <div class="stcard"><div class="stnum">2020</div><div class="stlab">Founded in Delhi</div></div>
+          <div class="stcard"><div class="stnum">200+</div><div class="stlab">Brands Transformed</div></div>
+          <div class="stcard"><div class="stnum">₹50Cr</div><div class="stlab">Ad Spend Managed</div></div>
+          <div class="stcard"><div class="stnum">4.8×</div><div class="stlab">Average Client ROAS</div></div>
+          <div class="stcard"><div class="stnum">98%</div><div class="stlab">Client Retention</div></div>
+          <div class="stcard"><div class="stnum">24+</div><div class="stlab">Team Members</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec sec-alt">
+    <div class="con">
+      <div class="sec-label center sr"><div class="pill"><span class="pd"></span>The Team</div><h2 class="h2">Meet the People Behind<br><span class="grad">Your Growth</span></h2></div>
+      <div class="tgrid sr d1">
+        <div class="tmember"><div class="tavo">A</div><div class="tmn">Aryan Kapoor</div><div class="tmr">Founder &amp; CEO</div><div class="tmbio">10+ years in performance marketing. Former Google &amp; Meta agency specialist. Obsessed with data-driven growth.</div></div>
+        <div class="tmember"><div class="tavo" style="background:linear-gradient(135deg,#E040A0,#F59E0B)">P</div><div class="tmn">Priya Mehta</div><div class="tmr">Head of Strategy</div><div class="tmbio">MBA from IIM Ahmedabad. Built digital strategies for D2C brands generating ₹100Cr+ in annual revenue.</div></div>
+        <div class="tmember"><div class="tavo" style="background:linear-gradient(135deg,#3B82F6,#7C3AED)">R</div><div class="tmn">Rahul Singh</div><div class="tmr">Creative Director</div><div class="tmbio">Designer who has led brand identities for 150+ companies. Former design lead at a top Mumbai creative agency.</div></div>
+        <div class="tmember"><div class="tavo" style="background:linear-gradient(135deg,#10B981,#3B82F6)">S</div><div class="tmn">Sneha Patel</div><div class="tmr">Head of Performance</div><div class="tmbio">Certified Google &amp; Meta expert. Manages ₹2Cr+ monthly ad spend with average 4.8× ROAS across all clients.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="con">
+      <div class="sec-label center sr"><div class="pill"><span class="pd"></span>Our Values</div><h2 class="h2">What We Stand For,<br><span class="grad">Every Single Day</span></h2></div>
+      <div class="vgrid sr d1">
+        <div class="vcard"><div class="vico">📊</div><div class="vt">Data Over Gut Feeling</div><div class="vd">Every strategy, every decision, every rupee — backed by data. We test, measure, and optimise relentlessly before scaling anything.</div></div>
+        <div class="vcard"><div class="vico">🤝</div><div class="vt">Partnership, Not Vendor</div><div class="vd">We're deeply invested in your success. Your growth targets become ours. We don't clock out when you're struggling.</div></div>
+        <div class="vcard"><div class="vico">💡</div><div class="vt">Radical Transparency</div><div class="vd">You own your accounts. You see every rupee. No hidden fees, no black boxes. Just honest, clear communication always.</div></div>
+        <div class="vcard"><div class="vico">⚡</div><div class="vt">Speed with Quality</div><div class="vd">We move fast without cutting corners. Our processes are built to deliver exceptional work on timelines that actually matter.</div></div>
+        <div class="vcard"><div class="vico">🚀</div><div class="vt">Results, Not Reports</div><div class="vd">We measure success in revenue and business growth — not impressions, clicks, or vanity metrics that don't move the needle.</div></div>
+        <div class="vcard"><div class="vico">🌱</div><div class="vt">Long-term Thinking</div><div class="vd">We build strategies that compound. A 6-month plan creating lasting growth is worth more than a 30-day spike every time.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-band">
+    <div class="ctaorb"></div>
+    <div class="ctabody sr">
+      <h2 class="ctah2" style="font-size:clamp(1.8rem,4vw,3rem)">Ready to Work with<br><span class="grad">India's Best Digital Team?</span></h2>
+      <p class="ctasub">Let's talk about your brand and build something extraordinary together.</p>
+      <div class="ctabtns"><button class="btn btn-primary" onclick="goPage('contact')">Get in Touch →</button><button class="btn btn-ghost" onclick="goPage('pricing')">View Pricing</button></div>
+    </div>
+  </div>
+  <footer><div class="ftin"><div class="fttop"><div><div class="ftblogo"><div class="nli">AX</div>AdvertX.in</div><p class="ftbp">India's performance-first digital marketing agency. Every rupee accountable, every campaign optimised.</p></div><div class="ftcol"><h4>Services</h4><ul><li><a onclick="goPage('services')">Website Design</a></li><li><a onclick="goPage('services')">Google Ads</a></li><li><a onclick="goPage('services')">Meta Ads</a></li><li><a onclick="goPage('services')">SEO</a></li></ul></div><div class="ftcol"><h4>Company</h4><ul><li><a onclick="goPage('home')">Home</a></li><li><a onclick="goPage('pricing')">Pricing</a></li><li><a onclick="goPage('contact')">Contact</a></li><li><a>Careers</a></li></ul></div><div class="ftcol"><h4>Connect</h4><ul><li><a>LinkedIn</a></li><li><a>Instagram</a></li><li><a href="mailto:hello@advertx.in">hello@advertx.in</a></li></ul></div></div><div class="ftbot"><span class="ftcopy">© 2025 AdvertX.in. All rights reserved.</span><div class="ftlinks"><a>Privacy</a><a>Terms</a></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════
+     SERVICES PAGE
+═══════════════════════════════════ -->
+<div id="pservices" class="page">
+  <div class="page-head">
+    <div class="bg-grid"></div>
+    <div class="orb o1"></div><div class="orb o2"></div>
+    <div class="page-head-z">
+      <div class="pill" style="margin-bottom:1rem"><span class="pd"></span>Our Services</div>
+      <h1>Everything You Need to <span class="grad">Win Online</span></h1>
+      <p>Full-stack digital marketing services for ambitious Indian brands — from first impression to loyal customer.</p>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="con">
+      <div class="svgrid sr">
+        <div class="svc"><div class="svico">🌐</div><div class="svt">Website Design &amp; Development</div><div class="svd">Custom, mobile-first websites engineered to convert visitors into customers. Every pixel intentional, every interaction measured.</div><ul class="svlist"><li>Custom UI/UX Design in Figma</li><li>React / Next.js / Webflow Development</li><li>Landing Page Optimisation &amp; CRO</li><li>Core Web Vitals &amp; Performance</li><li>Conversion Rate Focused Architecture</li></ul><div class="svglow"></div></div>
+        <div class="svc"><div class="svico">📣</div><div class="svt">Google Ads (PPC)</div><div class="svd">Search, Shopping, Display and Performance Max campaigns with precision targeting and crystal-clear ROI reporting every month.</div><ul class="svlist"><li>Search &amp; Shopping Campaign Management</li><li>Performance Max Campaigns</li><li>Display &amp; YouTube Retargeting</li><li>Keyword Research &amp; Bid Strategy</li><li>Weekly Performance Optimisation</li></ul><div class="svglow"></div></div>
+        <div class="svc"><div class="svico">📱</div><div class="svt">Meta &amp; Instagram Ads</div><div class="svd">Scroll-stopping creatives, precision audience segmentation, and relentless A/B testing that turns browsers into buyers at scale.</div><ul class="svlist"><li>Creative Strategy &amp; Production</li><li>Audience Research &amp; Segmentation</li><li>Retargeting &amp; Lookalike Campaigns</li><li>Instagram Reels Advertising</li><li>ROAS-focused Campaign Management</li></ul><div class="svglow"></div></div>
+        <div class="svc"><div class="svico">✦</div><div class="svt">Brand Identity &amp; Design</div><div class="svd">Logo, typography, colour systems, brand guidelines and complete visual identity systems that create instant, lasting market recognition.</div><ul class="svlist"><li>Logo Design &amp; Brand Mark</li><li>Brand Colour &amp; Typography System</li><li>Brand Guidelines Document</li><li>Social Media Templates</li><li>Marketing Collateral Design</li></ul><div class="svglow"></div></div>
+        <div class="svc"><div class="svico">📝</div><div class="svt">SEO &amp; Content Strategy</div><div class="svd">Organic traffic strategies that compound over months, reduce cost per lead, and establish your brand as the category authority.</div><ul class="svlist"><li>Technical SEO Audit &amp; Fixes</li><li>Keyword Research &amp; Strategy</li><li>Content Calendar &amp; Blog Writing</li><li>Backlink Building</li><li>Monthly SEO Reporting</li></ul><div class="svglow"></div></div>
+        <div class="svc"><div class="svico">📺</div><div class="svt">YouTube Advertising</div><div class="svd">Video ad campaigns that build powerful brand awareness and drive measurable conversions across India's largest video platform.</div><ul class="svlist"><li>Pre-roll &amp; Discovery Ads</li><li>Video Script &amp; Creative Guidance</li><li>Audience Targeting Strategy</li><li>Brand Lift &amp; Conversion Tracking</li><li>YouTube Channel Optimisation</li></ul><div class="svglow"></div></div>
+        <div class="svc"><div class="svico">📧</div><div class="svt">Email &amp; WhatsApp Automation</div><div class="svd">Intelligent drip sequences and lifecycle campaigns that nurture leads into loyal, high-value customers completely on autopilot.</div><ul class="svlist"><li>Welcome &amp; Onboarding Sequences</li><li>Abandoned Cart Recovery</li><li>Re-engagement Campaigns</li><li>WhatsApp Business Automation</li><li>Revenue Attribution Tracking</li></ul><div class="svglow"></div></div>
+        <div class="svc"><div class="svico">💼</div><div class="svt">LinkedIn B2B Marketing</div><div class="svd">Precision B2B campaigns that reach senior decision-makers and generate a steady pipeline of high-quality enterprise leads.</div><ul class="svlist"><li>Sponsored Content Campaigns</li><li>Lead Generation Forms</li><li>Account-Based Marketing</li><li>Company Page Optimisation</li><li>InMail Campaign Management</li></ul><div class="svglow"></div></div>
+        <div class="svc"><div class="svico">📊</div><div class="svt">Analytics &amp; Reporting</div><div class="svd">Real-time dashboards and clear monthly reports that show exactly where every rupee goes and what you should scale next.</div><ul class="svlist"><li>GA4 Setup &amp; Configuration</li><li>Looker Studio Dashboard</li><li>Conversion Tracking &amp; Attribution</li><li>Monthly Strategy Reviews</li><li>Competitor Intelligence Reports</li></ul><div class="svglow"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sec sec-alt">
+    <div class="con">
+      <div class="sec-label center sr"><div class="pill"><span class="pd"></span>How We Work</div><h2 class="h2">From Zero to Growth<br><span class="grad">in 4 Clear Steps</span></h2></div>
+      <div class="procgrid sr d1">
+        <div class="proc"><div class="pnum-big">01</div><div class="ptit">Deep Discovery</div><div class="pdesc-p">We study your brand, competitors, customers, and market before touching a design file. Strategy always comes before execution.</div></div>
+        <div class="proc"><div class="pnum-big">02</div><div class="ptit">Blueprint &amp; Strategy</div><div class="pdesc-p">Every channel, every creative, every budget mapped to your revenue targets. You see the full plan before we spend a single rupee.</div></div>
+        <div class="proc"><div class="pnum-big">03</div><div class="ptit">Build &amp; Launch</div><div class="pdesc-p">Our designers, developers, and copywriters move fast without cutting corners. Weekly progress updates, zero surprises throughout.</div></div>
+        <div class="proc"><div class="pnum-big">04</div><div class="ptit">Scale &amp; Compound</div><div class="pdesc-p">Launch is day one. Real-time data, monthly reviews, and relentless optimisation compound your returns every single month.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="con">
+      <div class="sec-label center sr"><div class="pill"><span class="pd"></span>FAQ</div><h2 class="h2">Common Questions<br>About Our <span class="grad">Services</span></h2></div>
+      <div class="flist">
+        <div class="fi open"><div class="fq" onclick="tFaq(this)">What's the minimum engagement period?<div class="fic">+</div></div><div class="fa">We recommend a minimum 3-month engagement for ad campaigns to gather sufficient data and optimise effectively. Website and branding projects are typically 4–8 week one-time projects. Most clients stay long-term — 98% renew — because the results keep improving.</div></div>
+        <div class="fi"><div class="fq" onclick="tFaq(this)">Do I keep ownership of everything you build?<div class="fic">+</div></div><div class="fa">Absolutely. You own 100% of everything — your Google Ads account, Meta Business Manager, website files, brand assets, and all creative. We never lock you into proprietary systems. Everything we create stays with you forever.</div></div>
+        <div class="fi"><div class="fq" onclick="tFaq(this)">How quickly can ads go live?<div class="fic">+</div></div><div class="fa">For new clients, we typically launch within 7–14 days — including strategy, creative production, account setup, and compliance review. For urgent launches, we can compress to 72 hours for basic campaigns. Quality always comes first.</div></div>
+        <div class="fi"><div class="fq" onclick="tFaq(this)">Can you work with our existing agency or in-house team?<div class="fic">+</div></div><div class="fa">Yes. We frequently work alongside in-house teams or other specialists. We can own specific channels or serve as a full-service extension of your team. We're flexible and collaborative.</div></div>
+        <div class="fi"><div class="fq" onclick="tFaq(this)">What reporting do we receive?<div class="fic">+</div></div><div class="fa">Every client gets a live Looker Studio dashboard updated daily, weekly email performance summaries, and a monthly strategy review call. Full transparency, always.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-band">
+    <div class="ctaorb"></div>
+    <div class="ctabody sr">
+      <h2 class="ctah2" style="font-size:clamp(1.8rem,4vw,3rem)">Ready to Start?<br><span class="grad">Let's Talk Strategy.</span></h2>
+      <p class="ctasub">Book a free 30-minute strategy call and we'll walk you through exactly what we'd do for your brand.</p>
+      <div class="ctabtns"><button class="btn btn-primary" onclick="goPage('contact')">Book Free Call →</button><button class="btn btn-ghost" onclick="goPage('pricing')">See Pricing</button></div>
+    </div>
+  </div>
+  <footer><div class="ftin"><div class="fttop"><div><div class="ftblogo"><div class="nli">AX</div>AdvertX.in</div><p class="ftbp">India's performance-first digital marketing agency.</p></div><div class="ftcol"><h4>Services</h4><ul><li><a onclick="goPage('services')">Website Design</a></li><li><a onclick="goPage('services')">Google Ads</a></li><li><a onclick="goPage('services')">Meta Ads</a></li></ul></div><div class="ftcol"><h4>Company</h4><ul><li><a onclick="goPage('about')">About</a></li><li><a onclick="goPage('pricing')">Pricing</a></li><li><a onclick="goPage('contact')">Contact</a></li></ul></div><div class="ftcol"><h4>Connect</h4><ul><li><a>LinkedIn</a></li><li><a>Instagram</a></li><li><a href="mailto:hello@advertx.in">Email</a></li></ul></div></div><div class="ftbot"><span class="ftcopy">© 2025 AdvertX.in</span><div class="ftlinks"><a>Privacy</a><a>Terms</a></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════
+     PRICING PAGE
+═══════════════════════════════════ -->
+<div id="ppricing" class="page">
+  <div class="page-head">
+    <div class="bg-grid"></div>
+    <div class="orb o1"></div><div class="orb o2"></div>
+    <div class="page-head-z">
+      <div class="pill" style="margin-bottom:1rem"><span class="pd"></span>Pricing</div>
+      <h1>Transparent Pricing<br><span class="grad">That Scales With You</span></h1>
+      <p>No hidden fees, no surprises. Clear plans built around your goals with full ownership of everything we create.</p>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="con">
+      <div class="togglewrap sr">
+        <span class="tlab">Monthly</span>
+        <div class="tgl" id="ptgl" onclick="tPrice()"><div class="tknob"></div></div>
+        <span class="tlab">Yearly</span>
+        <span class="savepill">Save 20%</span>
+      </div>
+      <div class="pgrid sr d1">
+        <div class="pc">
+          <div class="pplan">Starter</div><div class="pwho">New Brand</div>
+          <div class="pprice"><span class="pcurr">₹</span><span class="pnum" data-m="24,999" data-y="19,999">24,999</span><span class="pper">/month</span></div>
+          <div class="pdesc">Perfect for small businesses building their digital presence for the first time.</div>
+          <div class="pdiv"></div>
+          <ul class="plist">
+            <li>Brand Identity (Logo + Guidelines)</li><li>5-page Website Design &amp; Dev</li><li>Google Ads (up to ₹1L spend)</li><li>Monthly Analytics Report</li><li>Email Support</li>
+            <li class="no">Meta Advertising</li><li class="no">SEO &amp; Content Strategy</li><li class="no">Dedicated Account Manager</li>
+          </ul>
+          <button class="pbtn out" onclick="goPage('contact')">Get Started →</button>
+        </div>
+        <div class="pc hot">
+          <div class="ppill">Most Popular</div>
+          <div class="pplan">Growth</div><div class="pwho">Scaling Brand</div>
+          <div class="pprice"><span class="pcurr">₹</span><span class="pnum" data-m="59,999" data-y="47,999">59,999</span><span class="pper">/month</span></div>
+          <div class="pdesc">For ambitious brands ready to scale across multiple channels with a full team behind them.</div>
+          <div class="pdiv"></div>
+          <ul class="plist">
+            <li>Full Brand Identity System</li><li>10-page Custom Website + CRO</li><li>Google Ads (up to ₹5L spend)</li><li>Meta &amp; Instagram Advertising</li><li>SEO + Content (4 articles/month)</li><li>Weekly Analytics Dashboard</li><li>Dedicated Account Manager</li>
+            <li class="no">YouTube Advertising</li>
+          </ul>
+          <button class="pbtn fill" onclick="goPage('contact')">Start Growing →</button>
+        </div>
+        <div class="pc">
+          <div class="pplan">Dominator</div><div class="pwho">Market Leader</div>
+          <div class="pprice"><span class="pcurr">₹</span><span class="pnum" data-m="1,49,999" data-y="1,19,999">1,49,999</span><span class="pper">/month</span></div>
+          <div class="pdesc">For category leaders who want total digital dominance across every channel and touchpoint.</div>
+          <div class="pdiv"></div>
+          <ul class="plist">
+            <li>Enterprise Brand Identity</li><li>Unlimited Pages + Full CRO</li><li>Google + Meta + YouTube Ads</li><li>Full SEO + Content Strategy</li><li>Email &amp; WhatsApp Automation</li><li>LinkedIn B2B Campaigns</li><li>Real-time Analytics Command Centre</li><li>Priority 24/7 Support</li>
+          </ul>
+          <button class="pbtn out" onclick="goPage('contact')">Contact Us →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sec sec-alt">
+    <div class="con">
+      <div class="sec-label center sr"><h2 class="h2">Feature <span class="grad">Comparison</span></h2></div>
+      <div class="sr d1" style="overflow-x:auto">
+        <table class="ctable">
+          <thead><tr><th>Feature</th><th>Starter</th><th>Growth</th><th>Dominator</th></tr></thead>
+          <tbody>
+            <tr><td>Website Design &amp; Dev</td><td><span class="ctick">✓</span> 5-page</td><td><span class="ctick">✓</span> 10-page</td><td><span class="ctick">✓</span> Unlimited</td></tr>
+            <tr><td>Brand Identity</td><td><span class="ctick">✓</span> Basic</td><td><span class="ctick">✓</span> Full System</td><td><span class="ctick">✓</span> Enterprise</td></tr>
+            <tr><td>Google Ads Management</td><td><span class="ctick">✓</span> ₹1L cap</td><td><span class="ctick">✓</span> ₹5L cap</td><td><span class="ctick">✓</span> Unlimited</td></tr>
+            <tr><td>Meta &amp; Instagram Ads</td><td><span class="cno">–</span></td><td><span class="ctick">✓</span></td><td><span class="ctick">✓</span></td></tr>
+            <tr><td>SEO &amp; Content Strategy</td><td><span class="cno">–</span></td><td><span class="ctick">✓</span> 4 articles</td><td><span class="ctick">✓</span> Full</td></tr>
+            <tr><td>YouTube Advertising</td><td><span class="cno">–</span></td><td><span class="cno">–</span></td><td><span class="ctick">✓</span></td></tr>
+            <tr><td>LinkedIn B2B Ads</td><td><span class="cno">–</span></td><td><span class="cno">–</span></td><td><span class="ctick">✓</span></td></tr>
+            <tr><td>Email &amp; WhatsApp Automation</td><td><span class="cno">–</span></td><td><span class="cno">–</span></td><td><span class="ctick">✓</span></td></tr>
+            <tr><td>Dedicated Account Manager</td><td><span class="cno">–</span></td><td><span class="ctick">✓</span></td><td><span class="ctick">✓</span></td></tr>
+            <tr><td>Analytics Dashboard</td><td>Monthly Report</td><td>Weekly Live</td><td>Real-time</td></tr>
+            <tr><td>Support</td><td>Email</td><td>Email + Calls</td><td>Priority 24/7</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="con">
+      <div class="sec-label center sr"><div class="pill"><span class="pd"></span>FAQ</div><h2 class="h2">Pricing <span class="grad">Questions Answered</span></h2></div>
+      <div class="flist pfaq">
+        <div class="fi open"><div class="fq" onclick="tFaq(this)">Are there any setup fees?<div class="fic">+</div></div><div class="fa">No hidden setup fees. The monthly price is all-inclusive. For custom enterprise projects, we'll provide a clear itemised proposal before any work begins.</div></div>
+        <div class="fi"><div class="fq" onclick="tFaq(this)">Can I upgrade or downgrade plans?<div class="fic">+</div></div><div class="fa">Absolutely. You can upgrade anytime — we'll prorate the difference. Downgrades take effect from the next billing cycle. We're flexible and understand business needs change.</div></div>
+        <div class="fi"><div class="fq" onclick="tFaq(this)">What's included in the ad spend cap?<div class="fic">+</div></div><div class="fa">The ad spend cap refers to the budget we manage on your behalf in the ad platform. Our management fee is included in the monthly plan price. If you need a higher cap, we offer add-ons.</div></div>
+        <div class="fi"><div class="fq" onclick="tFaq(this)">Is there a contract lock-in?<div class="fic">+</div></div><div class="fa">We recommend 3-month minimum for performance campaigns to show real results. After that, you're on a rolling monthly basis. No long-term lock-ins, no exit penalties.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-band">
+    <div class="ctaorb"></div>
+    <div class="ctabody sr">
+      <h2 class="ctah2" style="font-size:clamp(1.8rem,4vw,3rem)">Not Sure Which Plan?<br><span class="grad">Let's Figure It Out Together.</span></h2>
+      <p class="ctasub">Book a free 30-minute call. We'll understand your goals and recommend the right plan — no pushy sales.</p>
+      <div class="ctabtns"><button class="btn btn-primary" onclick="goPage('contact')">Book Free Call →</button></div>
+    </div>
+  </div>
+  <footer><div class="ftin"><div class="fttop"><div><div class="ftblogo"><div class="nli">AX</div>AdvertX.in</div><p class="ftbp">India's performance-first digital marketing agency.</p></div><div class="ftcol"><h4>Services</h4><ul><li><a onclick="goPage('services')">All Services</a></li><li><a onclick="goPage('services')">Google Ads</a></li></ul></div><div class="ftcol"><h4>Company</h4><ul><li><a onclick="goPage('about')">About</a></li><li><a onclick="goPage('contact')">Contact</a></li></ul></div><div class="ftcol"><h4>Connect</h4><ul><li><a>LinkedIn</a></li><li><a href="mailto:hello@advertx.in">Email</a></li></ul></div></div><div class="ftbot"><span class="ftcopy">© 2025 AdvertX.in</span><div class="ftlinks"><a>Privacy</a><a>Terms</a></div></div></div></footer>
+</div>
+
+<!-- ═══════════════════════════════════
+     CONTACT PAGE
+═══════════════════════════════════ -->
+<div id="pcontact" class="page">
+  <div class="page-head">
+    <div class="bg-grid"></div>
+    <div class="orb o1"></div><div class="orb o2"></div>
+    <div class="page-head-z">
+      <div class="pill" style="margin-bottom:1rem"><span class="pd"></span>Let's Talk</div>
+      <h1>Start Your <span class="grad">Growth Journey</span></h1>
+      <p>Tell us about your brand. We'll come back within 24 hours with a clear, honest growth plan — no pressure, no jargon.</p>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="con">
+      <div class="ctgrid">
+        <div class="ctleft sr">
+          <div class="ctinfo"><div class="ctil">Email</div><div class="ctiv">hello@advertx.in</div><div class="ctis">We reply within 4 business hours</div></div>
+          <div class="ctinfo"><div class="ctil">Phone / WhatsApp</div><div class="ctiv">+91 98765 43210</div><div class="ctis">Mon–Sat, 9am–7pm IST</div></div>
+          <div class="ctinfo"><div class="ctil">Office</div><div class="ctiv">New Delhi, India</div><div class="ctis">Serving brands across India &amp; globally</div></div>
+          <div class="ctinfo"><div class="ctil">Free Strategy Call</div><div class="ctiv">30-minute consultation</div><div class="ctis">No commitment. We'll map out a growth plan for your brand — on us.</div></div>
+          <div class="resp-times">
+            <div class="ctil" style="margin-bottom:.7rem">Response Times</div>
+            <div class="rtime-row"><span class="rtime-lbl">Email replies</span><span class="rtime-val">Within 4hrs</span></div>
+            <div class="rtime-row"><span class="rtime-lbl">Proposal turnaround</span><span class="rtime-val">24–48hrs</span></div>
+            <div class="rtime-row"><span class="rtime-lbl">Campaign launch</span><span class="rtime-val">7–14 days</span></div>
+            <div class="rtime-row"><span class="rtime-lbl">First results visible</span><span class="rtime-val">2–4 weeks</span></div>
+          </div>
+        </div>
+        <div class="ctform sr d2">
+          <h3>Tell Us About Your Brand</h3>
+          <div id="formwrap">
+            <div class="frow"><div class="fg"><label>First Name *</label><input type="text" id="fname" placeholder="Aryan"/></div><div class="fg"><label>Last Name</label><input type="text" placeholder="Kapoor"/></div></div>
+            <div class="fg"><label>Business Email *</label><input type="email" id="femail" placeholder="aryan@yourbrand.com"/></div>
+            <div class="fg"><label>Phone / WhatsApp</label><input type="tel" placeholder="+91 98765 43210"/></div>
+            <div class="fg"><label>Brand / Company Name *</label><input type="text" id="fbrand" placeholder="Your Brand Name"/></div>
+            <div class="fg"><label>Monthly Ad Budget</label><select><option value="">Select budget range</option><option>Under ₹50,000/month</option><option>₹50,000 – ₹1,00,000</option><option>₹1,00,000 – ₹5,00,000</option><option>₹5,00,000+</option></select></div>
+            <div class="fg"><label>Services Interested In</label><select><option value="">Select a service</option><option>Website Design &amp; Development</option><option>Google Ads (PPC)</option><option>Meta &amp; Instagram Ads</option><option>Brand Identity</option><option>SEO &amp; Content</option><option>Full Growth Package</option><option>Other / Not sure yet</option></select></div>
+            <div class="fg"><label>Tell us about your goals</label><textarea placeholder="What are you trying to achieve? What's not working right now? Any context helps us prepare better for your call..."></textarea></div>
+            <button class="sbtn" onclick="submitForm()">Send Message &amp; Get Free Audit →</button>
+          </div>
+          <div class="formsuccess" id="fsuccess">
+            <div style="font-size:2.4rem;margin-bottom:.9rem">🎉</div>
+            <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:.45rem;color:#fff">Message Sent!</h3>
+            <p style="font-size:.83rem;color:var(--tx2)">Thanks for reaching out. We'll review your details and get back to you within 4 business hours with a personalised growth plan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer><div class="ftin"><div class="fttop"><div><div class="ftblogo"><div class="nli">AX</div>AdvertX.in</div><p class="ftbp">India's performance-first digital marketing agency.</p></div><div class="ftcol"><h4>Services</h4><ul><li><a onclick="goPage('services')">All Services</a></li><li><a onclick="goPage('services')">Google Ads</a></li></ul></div><div class="ftcol"><h4>Company</h4><ul><li><a onclick="goPage('about')">About</a></li><li><a onclick="goPage('pricing')">Pricing</a></li></ul></div><div class="ftcol"><h4>Connect</h4><ul><li><a>LinkedIn</a></li><li><a href="mailto:hello@advertx.in">Email</a></li></ul></div></div><div class="ftbot"><span class="ftcopy">© 2025 AdvertX.in</span><div class="ftlinks"><a>Privacy</a><a>Terms</a></div></div></div></footer>
+</div>
+
+<script>
+// ── Page navigation ───────────────────────────────────
+function goPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nlinks a').forEach(a => a.classList.remove('active'));
+  document.getElementById('p' + id).classList.add('active');
+  const nl = document.getElementById('nl-' + id);
+  if (nl) nl.classList.add('active');
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+// ── Scroll reveal ────────────────────────────────────
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, {threshold:.07});
+document.querySelectorAll('.sr').forEach(el => io.observe(el));
+
+// ── FAQ ──────────────────────────────────────────────
+function tFaq(el) {
+  const item = el.parentElement;
+  const siblings = item.parentElement.querySelectorAll('.fi');
+  siblings.forEach(i => { if (i !== item) i.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+
+// ── Pricing toggle ────────────────────────────────────
+let yearly = false;
+function tPrice() {
+  yearly = !yearly;
+  const btn = document.getElementById('ptgl');
+  if (btn) btn.classList.toggle('on', yearly);
+  document.querySelectorAll('.pnum').forEach(el => {
+    if (el.dataset.m) el.textContent = yearly ? el.dataset.y : el.dataset.m;
+  });
+}
+
+// ── Contact form ──────────────────────────────────────
+function submitForm() {
+  const fname = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const brand = document.getElementById('fbrand').value.trim();
+  if (!fname || !email || !brand) { alert('Please fill in your name, email and brand name.'); return; }
+  document.getElementById('formwrap').style.display = 'none';
+  document.getElementById('fsuccess').style.display = 'block';
+}
+
+// ── Folder expand (Apple-style) ───────────────────────
+const folderData = {
+  fset1:[
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',name:'Website Design & Development',desc:'Custom mobile-first websites engineered to convert visitors into customers. Every pixel intentional, every interaction measured for maximum performance.',tags:['React','Next.js','Webflow','Figma'],bullets:['Custom UI/UX Design in Figma','React / Next.js / Webflow Development','Landing Page Optimisation & CRO','Core Web Vitals & Performance','Conversion Rate Focused Architecture']},
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>',name:'Google Ads (PPC)',desc:'Search, Shopping, Display and Performance Max campaigns with precision targeting and crystal-clear ROI reporting every single month.',tags:['Search','Shopping','Display','P-Max'],bullets:['Search & Shopping Campaign Management','Performance Max Campaigns','Display & YouTube Retargeting','Keyword Research & Bid Strategy','Weekly Performance Optimisation']},
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>',name:'Brand Identity & Design',desc:'Logo, typography, colour systems, brand guidelines and complete visual identity systems that create instant, lasting market recognition.',tags:['Logo','Guidelines','Typography','Figma'],bullets:['Logo Design & Brand Mark','Brand Colour & Typography System','Brand Guidelines Document','Social Media Templates','Marketing Collateral Design']}
+  ],
+  fset2:[
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="9" height="9" rx="1.5"/><rect x="13" y="2" width="9" height="9" rx="1.5"/><rect x="2" y="13" width="9" height="9" rx="1.5"/><rect x="13" y="13" width="9" height="9" rx="1.5"/></svg>',name:'Meta & Instagram Ads',desc:'Scroll-stopping creatives, precision audience segmentation, and relentless A/B testing that turns browsers into buyers at scale across India.',tags:['Facebook','Instagram','Reels','Retargeting'],bullets:['Creative Strategy & Production','Audience Research & Segmentation','Retargeting & Lookalike Campaigns','Instagram Reels Advertising','ROAS-focused Campaign Management']},
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',name:'SEO & Content Strategy',desc:'Organic traffic strategies that compound over months, reduce cost per lead, and establish your brand as the authority in your category.',tags:['On-page','Technical','Off-page','Content'],bullets:['Technical SEO Audit & Fixes','Keyword Research & Strategy','Content Calendar & Blog Writing','Backlink Building','Monthly SEO Reporting']},
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>',name:'Email & WhatsApp Automation',desc:'Intelligent drip sequences and lifecycle campaigns that nurture leads into loyal, high-value customers completely on autopilot 24/7.',tags:['Klaviyo','Mailchimp','WhatsApp','Drip'],bullets:['Welcome & Onboarding Sequences','Abandoned Cart Recovery','Re-engagement Campaigns','WhatsApp Business Automation','Revenue Attribution Tracking']}
+  ],
+  fset3:[
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>',name:'YouTube Advertising',desc:"Video ad campaigns that build powerful brand awareness and drive measurable conversions at scale across India's largest video platform.",tags:['Pre-roll','Discovery','YouTube','Video'],bullets:['Pre-roll & Discovery Ads','Video Script & Creative Guidance','Audience Targeting Strategy','Brand Lift & Conversion Tracking','YouTube Channel Optimisation']},
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',name:'Social Media Management',desc:'On-brand content calendars, community management and engagement strategies that build loyal audiences and convert followers into customers.',tags:['Instagram','LinkedIn','X','Community'],bullets:['Content Calendar & Scheduling','Reel & Story Production','Community Management','Monthly Engagement Reports','Competitor Benchmarking']},
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',name:'Analytics & Reporting',desc:'Real-time dashboards and clear monthly reports that show exactly where every rupee goes and what deserves more budget next month.',tags:['GA4','Looker','Attribution','Dashboards'],bullets:['GA4 Setup & Configuration','Looker Studio Dashboard','Conversion Tracking & Attribution','Monthly Strategy Reviews','Competitor Intelligence Reports']}
+  ],
+  fset4:[
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>',name:'Performance Marketing',desc:'Full-funnel multi-channel strategies built for maximum ROAS. We connect every touchpoint from awareness to purchase to repeat revenue.',tags:['Multi-channel','Full-funnel','ROAS','Attribution'],bullets:['Multi-channel Strategy','Full-funnel Attribution','Budget Allocation Optimisation','Creative A/B Testing','Monthly Performance Reviews']},
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>',name:'Conversion Rate Optimisation',desc:'A/B testing and landing page improvements that systematically double your conversions without spending a single extra rupee on ads.',tags:['A/B Tests','CRO','UX','Heatmaps'],bullets:['Heatmap & User Behaviour Analysis','A/B & Multivariate Testing','Landing Page Redesign','Funnel Audit & Fixes','Post-test Implementation']},
+    {ico:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>',name:'LinkedIn B2B Marketing',desc:'Precision B2B campaigns that reach senior decision-makers and generate a steady pipeline of high-quality enterprise leads every month.',tags:['Lead Gen','Sponsored','ABM','InMail'],bullets:['Sponsored Content Campaigns','Lead Generation Forms','Account-Based Marketing','Company Page Optimisation','InMail Campaign Management']}
+  ]
+};
+
+let openSet=null,openIdx=null;
+function openFolder(card){
+  const setId=card.dataset.set, idx=parseInt(card.dataset.idx);
+  const drawer=document.getElementById('fdrawer-'+setId);
+  const inner=document.getElementById('fdinner-'+setId);
+  const grid=card.closest('.fset-grid');
+  const allCards=grid.querySelectorAll('.fol-card');
+  if(openSet===setId&&openIdx===idx){
+    drawer.classList.remove('open');
+    allCards.forEach(c=>c.classList.remove('active'));
+    openSet=null;openIdx=null;return;
+  }
+  document.querySelectorAll('.fol-drawer.open').forEach(d=>d.classList.remove('open'));
+  document.querySelectorAll('.fol-card.active').forEach(c=>c.classList.remove('active'));
+  card.classList.add('active');
+  openSet=setId;openIdx=idx;
+  const cardRect=card.getBoundingClientRect();
+  const gridRect=grid.getBoundingClientRect();
+  const arrowLeft=(cardRect.left-gridRect.left)+cardRect.width/2;
+  drawer.style.setProperty('--arrow-left',arrowLeft+'px');
+  const data=folderData[setId][idx];
+  inner.innerHTML=`<div class="fdl-head"><div class="fdl-ico">${data.ico}</div><div class="fdl-tit">${data.name}</div><div class="fdl-desc">${data.desc}</div><div class="fdl-tags">${data.tags.map(t=>`<span class="fdl-tag">${t}</span>`).join('')}</div></div><ul class="fdl-list">${data.bullets.map(b=>`<li><span class="chk">✓</span>${b}</li>`).join('')}</ul>`;
+  requestAnimationFrame(()=>drawer.classList.add('open'));
+}
+</script>
+</body>
+</html>
