@@ -470,6 +470,21 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:4rem 2.5rem 
   .frow{grid-template-columns:1fr}
   .fset-grid{grid-template-columns:1fr 1fr}
 }
+
+/* ─── MOBILE MENU ─────────────────────── */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:4px;z-index:1000}
+.hamburger span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nlinks{position:absolute;top:var(--nav);left:0;right:0;flex-direction:column;background:rgba(7,7,14,.97);backdrop-filter:blur(20px);padding:1rem 1.5rem;gap:0;border-bottom:1px solid var(--bdr)}
+  .nlinks:not(.mob-open){display:none}
+  .nlinks.mob-open{display:flex}
+  .nlinks a{padding:.7rem 0;display:block;font-size:.9rem}
+  .nr{display:none}
+}
 </style>
 </head>
 <body>
@@ -490,6 +505,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:4rem 2.5rem 
   <div class="nr">
     <button class="nbtn-ghost" onclick="goPage('contact')">Login</button>
     <button class="nbtn-fill" onclick="goPage('contact')">Get Started</button>
+    <button class="hamburger" onclick="toggleMob(this)" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -1111,6 +1127,9 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:4rem 2.5rem 
 </div>
 
 <script>
+// ── Mobile menu toggle ───────────────────────────────
+function toggleMob(btn){btn.classList.toggle('open');document.querySelector('.nlinks').classList.toggle('mob-open')}
+
 // ── Page navigation ───────────────────────────────────
 function goPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1119,6 +1138,10 @@ function goPage(id) {
   const nl = document.getElementById('nl-' + id);
   if (nl) nl.classList.add('active');
   window.scrollTo({top:0,behavior:'instant'});
+  // close mobile menu on navigation
+  document.querySelector('.nlinks').classList.remove('mob-open');
+  const hb = document.querySelector('.hamburger');
+  if (hb) hb.classList.remove('open');
 }
 
 // ── Scroll reveal ────────────────────────────────────
